@@ -1,0 +1,43 @@
+<div class="login-container">
+  <div class="form-container">
+    <h2>Registrarse</h2>
+    <form [formGroup]="formRegistro" (ngSubmit)="submitForm()">
+      <div *ngIf="mensajeExito" class="alert alert-success">{{ mensajeExito }}</div>
+      <div *ngIf="mensajeError" class="alert alert-danger">{{ mensajeError }}</div>
+      
+      <div class="form-group">
+        <input id="nombre" formControlName="nombre" type="text" placeholder="Nombre" />
+        <div *ngIf="formRegistro.get('nombre')?.invalid && formRegistro.get('nombre')?.touched" class="text-danger">
+          El nombre es requerido.
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <input id="email" formControlName="email" type="email" placeholder="Mail" />
+        <div *ngIf="formRegistro.get('email')?.invalid && formRegistro.get('email')?.touched" class="text-danger">
+          Email es requerido y debe ser válido.
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <input id="password" formControlName="password" type="password" placeholder="Contraseña" />
+        <div *ngIf="formRegistro.get('password')?.invalid && formRegistro.get('password')?.touched" class="text-danger">
+          La contraseña debe tener entre 8 y 20 caracteres y cumplir con los requisitos de seguridad.
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <input id="confirmPassword" formControlName="confirmPassword" type="password" placeholder="Confirmar Contraseña" />
+        <div *ngIf="formRegistro.get('confirmPassword')?.invalid && formRegistro.get('confirmPassword')?.touched" class="text-danger">
+          Las contraseñas deben coincidir.
+        </div>
+      </div>
+      
+      <input type="submit" value="Registrarse" />
+      
+      <div class="login-link">
+        ¿Ya tienes una cuenta? <a routerLink="/login">Login</a>
+      </div>
+    </form>
+  </div>
+</div>

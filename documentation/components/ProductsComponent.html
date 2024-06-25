@@ -1,0 +1,1933 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>dsy2202-sum2 documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">dsy2202-sum2 documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  ProductsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/products/products.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente para mostrar la lista de productos y gestionar la adición de productos al carrito de compras.</p>
+
+    </p>
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-products</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>CommonModule</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./products.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./products.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#cartService" >cartService</a>
+                            </li>
+                            <li>
+                                <a href="#Productos" >Productos</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#agregarAlCarrito" >agregarAlCarrito</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="agregarAlCarrito"></a>
+                    <span class="name">
+                        <span ><b>agregarAlCarrito</b></span>
+                        <a href="#agregarAlCarrito"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>agregarAlCarrito(producto: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="116"
+                                    class="link-to-prism">src/app/components/products/products.component.ts:116</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Agrega un producto al carrito de compras.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>producto</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>El producto que se va a agregar al carrito.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cartService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>cartService</b></span>
+                        <a href="#cartService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(CartService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/components/products/products.component.ts:19</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Servicio de carrito de compras para gestionar los productos en el carrito.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Productos"></a>
+                    <span class="name">
+                        <span ><b>Productos</b></span>
+                        <a href="#Productos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    {
+      id: 1,
+      foto: &quot;assets/images/1.png&quot;,
+      nombre: &quot;Cabernet Sauvignon Reserva&quot;,
+      descripcion: &quot;Vino tinto robusto con notas de frutas negras&quot;,
+      precio: 15000,
+    },
+    {
+      id: 2,
+      foto: &quot;assets/images/2.png&quot;,
+      nombre: &quot;Chardonnay Gran Reserva&quot;,
+      descripcion: &quot;Vino blanco elegante con toques de vainilla&quot;,
+      precio: 18000,
+    },
+    {
+      id: 3,
+      foto: &quot;assets/images/3.png&quot;,
+      nombre: &quot;Merlot Edición Limitada&quot;,
+      descripcion: &quot;Suave y aterciopelado con aromas a ciruela&quot;,
+      precio: 22000,
+    },
+    {
+      id: 4,
+      foto: &quot;assets/images/4.png&quot;,
+      nombre: &quot;Sauvignon Blanc Orgánico&quot;,
+      descripcion: &quot;Fresco y cítrico, perfecto para el verano&quot;,
+      precio: 16500,
+    },
+    {
+      id: 5,
+      foto: &quot;assets/images/5.png&quot;,
+      nombre: &quot;Carmenere Premium&quot;,
+      descripcion: &quot;Intenso y especiado, orgullo chileno&quot;,
+      precio: 19500,
+    },
+    {
+      id: 6,
+      foto: &quot;assets/images/6.png&quot;,
+      nombre: &quot;Pinot Noir Selección Especial&quot;,
+      descripcion: &quot;Delicado y afrutado, ideal para carnes blancas&quot;,
+      precio: 21000,
+    },
+    {
+      id: 7,
+      foto: &quot;assets/images/10.png&quot;,
+      nombre: &quot;Pack Degustación Tintos&quot;,
+      descripcion: &quot;Selección de 3 vinos tintos premium&quot;,
+      precio: 45000,
+    },
+    {
+      id: 8,
+      foto: &quot;assets/images/20.png&quot;,
+      nombre: &quot;Pack Blancos Refrescantes&quot;,
+      descripcion: &quot;Colección de 3 vinos blancos varietales&quot;,
+      precio: 40000,
+    },
+    {
+      id: 9,
+      foto: &quot;assets/images/30.png&quot;,
+      nombre: &quot;Pack Maridaje Gourmet&quot;,
+      descripcion: &quot;4 vinos seleccionados para acompañar comidas&quot;,
+      precio: 65000,
+    },
+    {
+      id: 10,
+      foto: &quot;assets/images/40.png&quot;,
+      nombre: &quot;Pack Celebración&quot;,
+      descripcion: &quot;2 vinos premium y 1 espumante&quot;,
+      precio: 55000,
+    },
+    {
+      id: 11,
+      foto: &quot;assets/images/50.png&quot;,
+      nombre: &quot;Pack Descubrimiento&quot;,
+      descripcion: &quot;5 vinos de diferentes cepas para explorar&quot;,
+      precio: 70000,
+    },
+    {
+      id: 12,
+      foto: &quot;assets/images/60.png&quot;,
+      nombre: &quot;Pack Coleccionista&quot;,
+      descripcion: &quot;3 vinos de añadas especiales&quot;,
+      precio: 90000,
+    },
+  ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/components/products/products.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Lista de productos disponibles.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, inject } from &#x27;@angular/core&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
+import { CartService } from &#x27;../../service/cart.service&#x27;;
+
+/**
+ * Componente para mostrar la lista de productos y gestionar la adición de productos al carrito de compras.
+ */
+@Component({
+  selector: &#x27;app-products&#x27;,
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: &#x27;./products.component.html&#x27;,
+  styleUrls: [&#x27;./products.component.css&#x27;]
+})
+export class ProductsComponent {
+  /**
+   * Servicio de carrito de compras para gestionar los productos en el carrito.
+   */
+  private cartService &#x3D; inject(CartService);
+
+  /**
+   * Lista de productos disponibles.
+   */
+  Productos &#x3D; [
+    {
+      id: 1,
+      foto: &quot;assets/images/1.png&quot;,
+      nombre: &quot;Cabernet Sauvignon Reserva&quot;,
+      descripcion: &quot;Vino tinto robusto con notas de frutas negras&quot;,
+      precio: 15000,
+    },
+    {
+      id: 2,
+      foto: &quot;assets/images/2.png&quot;,
+      nombre: &quot;Chardonnay Gran Reserva&quot;,
+      descripcion: &quot;Vino blanco elegante con toques de vainilla&quot;,
+      precio: 18000,
+    },
+    {
+      id: 3,
+      foto: &quot;assets/images/3.png&quot;,
+      nombre: &quot;Merlot Edición Limitada&quot;,
+      descripcion: &quot;Suave y aterciopelado con aromas a ciruela&quot;,
+      precio: 22000,
+    },
+    {
+      id: 4,
+      foto: &quot;assets/images/4.png&quot;,
+      nombre: &quot;Sauvignon Blanc Orgánico&quot;,
+      descripcion: &quot;Fresco y cítrico, perfecto para el verano&quot;,
+      precio: 16500,
+    },
+    {
+      id: 5,
+      foto: &quot;assets/images/5.png&quot;,
+      nombre: &quot;Carmenere Premium&quot;,
+      descripcion: &quot;Intenso y especiado, orgullo chileno&quot;,
+      precio: 19500,
+    },
+    {
+      id: 6,
+      foto: &quot;assets/images/6.png&quot;,
+      nombre: &quot;Pinot Noir Selección Especial&quot;,
+      descripcion: &quot;Delicado y afrutado, ideal para carnes blancas&quot;,
+      precio: 21000,
+    },
+    {
+      id: 7,
+      foto: &quot;assets/images/10.png&quot;,
+      nombre: &quot;Pack Degustación Tintos&quot;,
+      descripcion: &quot;Selección de 3 vinos tintos premium&quot;,
+      precio: 45000,
+    },
+    {
+      id: 8,
+      foto: &quot;assets/images/20.png&quot;,
+      nombre: &quot;Pack Blancos Refrescantes&quot;,
+      descripcion: &quot;Colección de 3 vinos blancos varietales&quot;,
+      precio: 40000,
+    },
+    {
+      id: 9,
+      foto: &quot;assets/images/30.png&quot;,
+      nombre: &quot;Pack Maridaje Gourmet&quot;,
+      descripcion: &quot;4 vinos seleccionados para acompañar comidas&quot;,
+      precio: 65000,
+    },
+    {
+      id: 10,
+      foto: &quot;assets/images/40.png&quot;,
+      nombre: &quot;Pack Celebración&quot;,
+      descripcion: &quot;2 vinos premium y 1 espumante&quot;,
+      precio: 55000,
+    },
+    {
+      id: 11,
+      foto: &quot;assets/images/50.png&quot;,
+      nombre: &quot;Pack Descubrimiento&quot;,
+      descripcion: &quot;5 vinos de diferentes cepas para explorar&quot;,
+      precio: 70000,
+    },
+    {
+      id: 12,
+      foto: &quot;assets/images/60.png&quot;,
+      nombre: &quot;Pack Coleccionista&quot;,
+      descripcion: &quot;3 vinos de añadas especiales&quot;,
+      precio: 90000,
+    },
+  ];
+
+  /**
+   * Agrega un producto al carrito de compras.
+   *
+   * @param producto - El producto que se va a agregar al carrito.
+   */
+  agregarAlCarrito(producto: any) {
+    this.cartService.addToCart(producto);
+    console.log(&#x27;Producto agregado al carrito:&#x27;, producto);
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">
+&lt;body&gt;
+    &lt;header class&#x3D;&quot;header&quot;&gt;
+       
+        &lt;div class&#x3D;&quot;header-content container&quot;&gt;
+            &lt;div class&#x3D;&quot;header-img&quot;&gt;
+                &lt;img src&#x3D;&quot;assets/images/right2.png&quot; alt&#x3D;&quot;header image&quot; /&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;header-txt&quot;&gt;
+                &lt;h1&gt;Productos&lt;/h1&gt;
+                &lt;p&gt;mejores precio del pais&lt;/p&gt;
+                &lt;a routerLink&#x3D;&quot;/productos&quot; class&#x3D;&quot;btn-1&quot;&gt;Productos a la Venta&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+    
+    &lt;section class&#x3D;&quot;ofert container&quot;&gt;
+        &lt;div class&#x3D;&quot;ofert-1&quot;&gt;
+            &lt;div class&#x3D;&quot;ofert-img&quot;&gt;
+                &lt;img src&#x3D;&quot;assets/images/f1.png&quot; alt&#x3D;&quot;&quot; &gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;ofert-txt&quot;&gt;
+                &lt;h3&gt;VINO TINTO PREMIUM&lt;/h3&gt;
+                &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;btn-2&quot;&gt;Informacion&lt;/a&gt;
+            &lt;/div&gt;    
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;ofert-1&quot;&gt;
+            &lt;div class&#x3D;&quot;ofert-img&quot;&gt;
+                &lt;img src&#x3D;&quot;assets/images/f2.png&quot; alt&#x3D;&quot;&quot; &gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;ofert-txt&quot;&gt;
+                &lt;h3&gt;VINOS BLANCOS PREMIUM&lt;/h3&gt;
+                &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;btn-2&quot;&gt;Informacion&lt;/a&gt;
+            &lt;/div&gt;    
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;ofert-1&quot;&gt;
+            &lt;div class&#x3D;&quot;ofert-img&quot;&gt;
+                &lt;img src&#x3D;&quot;assets/images/f3.png&quot; alt&#x3D;&quot;&quot; &gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;ofert-txt&quot;&gt;
+                &lt;h3&gt;ESPUMANTES PREMIUM&lt;/h3&gt;
+                &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;btn-2&quot;&gt;Informacion&lt;/a&gt;
+            &lt;/div&gt;    
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;main class&#x3D;&quot;products container&quot;&gt;
+        &lt;h2&gt;VENTAS PRODUCTO X UNIDAD&lt;/h2&gt;
+        &lt;div class&#x3D;&quot;product-content&quot;&gt;
+            @for ( producto of Productos; track producto.id) {
+          &lt;div  class&#x3D;&quot;product&quot;&gt;
+            &lt;img [src]&#x3D;&quot;producto.foto&quot; alt&#x3D;&quot;{{producto.nombre}}&quot; /&gt;
+            &lt;div class&#x3D;&quot;product-txt&quot;&gt;
+              &lt;h3&gt;{{producto.nombre}}&lt;/h3&gt;
+              &lt;p&gt;{{producto.descripcion}}&lt;/p&gt;
+              &lt;p class&#x3D;&quot;precio&quot;&gt;${{producto.precio}}&lt;/p&gt;
+              &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;agregar-carrito btn-2&quot; (click)&#x3D;&quot;agregarAlCarrito(producto)&quot; [attr.data-id]&#x3D;&quot;producto.id&quot;&gt;Agregar al carrito&lt;/button&gt;
+            &lt;/div&gt;
+        
+          &lt;/div&gt;
+        }
+      
+        
+              
+            &lt;!-- &lt;div class&#x3D;&quot;product&quot;&gt;
+                &lt;img src&#x3D;&quot;assets/images/2.png&quot; alt&#x3D;&quot;&quot; /&gt;
+                &lt;div class&#x3D;&quot;product-txt&quot;&gt;
+                    &lt;h3&gt;vino 2&lt;/h3&gt;
+                    &lt;p&gt;Calidad Premiun&lt;/p&gt;
+                    &lt;p class&#x3D;&quot;precio&quot;&gt;$12000&lt;/p&gt;
+                    &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;agregar-carrito btn-2&quot; data-id&#x3D;&quot;2&quot;&gt;Agregar al carrito&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;product&quot;&gt;
+                &lt;img src&#x3D;&quot;assets/images/3.png&quot; alt&#x3D;&quot;&quot; /&gt;
+                &lt;div class&#x3D;&quot;product-txt&quot;&gt;
+                    &lt;h3&gt;vino 3&lt;/h3&gt;
+                    &lt;p&gt;Calidad Premiun&lt;/p&gt;
+                    &lt;p class&#x3D;&quot;precio&quot;&gt;$23000&lt;/p&gt;
+                    &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;agregar-carrito btn-2&quot; data-id&#x3D;&quot;3&quot;&gt;Agregar al carrito&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;product&quot;&gt;
+                &lt;img src&#x3D;&quot;assets/images/4.png&quot; alt&#x3D;&quot;&quot; /&gt;
+                &lt;div class&#x3D;&quot;product-txt&quot;&gt;
+                    &lt;h3&gt;vino 4&lt;/h3&gt;
+                    &lt;p&gt;Calidad Premiun&lt;/p&gt;
+                    &lt;p class&#x3D;&quot;precio&quot;&gt;$18000&lt;/p&gt;
+                    &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;agregar-carrito btn-2&quot; data-id&#x3D;&quot;4&quot;&gt;Agregar al carrito&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;product&quot;&gt;
+                &lt;img src&#x3D;&quot;assets/images/5.png&quot; alt&#x3D;&quot;&quot; /&gt;
+                &lt;div class&#x3D;&quot;product-txt&quot;&gt;
+                    &lt;h3&gt;vino 5&lt;/h3&gt;
+                    &lt;p&gt;Calidad Premiun&lt;/p&gt;
+                    &lt;p class&#x3D;&quot;precio&quot;&gt;$10000&lt;/p&gt;
+                    &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;agregar-carrito btn-2&quot; data-id&#x3D;&quot;5&quot;&gt;Agregar al carrito&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;product&quot;&gt;
+                &lt;img src&#x3D;&quot;assets/images/6.png&quot; alt&#x3D;&quot;&quot; /&gt;
+                &lt;div class&#x3D;&quot;product-txt&quot;&gt;
+                    &lt;h3&gt;vino 6&lt;/h3&gt;
+                    &lt;p&gt;Calidad Premiun&lt;/p&gt;
+                    &lt;p class&#x3D;&quot;precio&quot;&gt;$13500&lt;/p&gt;
+                    &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;agregar-carrito btn-2&quot; data-id&#x3D;&quot;6&quot;&gt;Agregar al carrito&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;product&quot;&gt;
+                &lt;img src&#x3D;&quot;assets/images/10.png&quot; alt&#x3D;&quot;&quot; /&gt;
+                &lt;div class&#x3D;&quot;product-txt&quot;&gt;
+                    &lt;h3&gt;Pack 1&lt;/h3&gt;
+                    &lt;p&gt;Calidad Premiun&lt;/p&gt;
+                    &lt;p class&#x3D;&quot;precio&quot;&gt;$20000&lt;/p&gt;
+                    &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;agregar-carrito btn-2&quot; data-id&#x3D;&quot;7&quot;&gt;Agregar al carrito&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;product&quot;&gt;
+                &lt;img src&#x3D;&quot;assets/images/20.png&quot; alt&#x3D;&quot;&quot; /&gt;
+                &lt;div class&#x3D;&quot;product-txt&quot;&gt;
+                    &lt;h3&gt;Pack 2&lt;/h3&gt;
+                    &lt;p&gt;Calidad Premiun&lt;/p&gt;
+                    &lt;p class&#x3D;&quot;precio&quot;&gt;$12000&lt;/p&gt;
+                    &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;agregar-carrito btn-2&quot; data-id&#x3D;&quot;8&quot;&gt;Agregar al carrito&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;product&quot;&gt;
+                &lt;img src&#x3D;&quot;assets/images/30.png&quot; alt&#x3D;&quot;&quot; /&gt;
+                &lt;div class&#x3D;&quot;product-txt&quot;&gt;
+                    &lt;h3&gt;Pack 3&lt;/h3&gt;
+                    &lt;p&gt;Calidad Premiun&lt;/p&gt;
+                    &lt;p class&#x3D;&quot;precio&quot;&gt;$98000&lt;/p&gt;
+                    &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;agregar-carrito btn-2&quot; data-id&#x3D;&quot;9&quot;&gt;Agregar al carrito&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;product&quot;&gt;
+                &lt;img src&#x3D;&quot;assets/images/40.png&quot; alt&#x3D;&quot;&quot; /&gt;
+                &lt;div class&#x3D;&quot;product-txt&quot;&gt;
+                    &lt;h3&gt;Pack 4&lt;/h3&gt;
+                    &lt;p&gt;Calidad Premiun&lt;/p&gt;
+                    &lt;p class&#x3D;&quot;precio&quot;&gt;$40000&lt;/p&gt;
+                    &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;agregar-carrito btn-2&quot; data-id&#x3D;&quot;10&quot;&gt;Agregar al carrito&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;product&quot;&gt;
+                &lt;img src&#x3D;&quot;assets/images/50.png&quot; alt&#x3D;&quot;&quot; /&gt;
+                &lt;div class&#x3D;&quot;product-txt&quot;&gt;
+                    &lt;h3&gt;Pack 5&lt;/h3&gt;
+                    &lt;p&gt;Calidad Premiun&lt;/p&gt;
+                    &lt;p class&#x3D;&quot;precio&quot;&gt;$65000&lt;/p&gt;
+                    &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;agregar-carrito btn-2&quot; data-id&#x3D;&quot;11&quot;&gt;Agregar al carrito&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;product&quot;&gt;
+                &lt;img src&#x3D;&quot;assets/images/60.png&quot; alt&#x3D;&quot;&quot; /&gt;
+                &lt;div class&#x3D;&quot;product-txt&quot;&gt;
+                    &lt;h3&gt;Pack 6&lt;/h3&gt;
+                    &lt;p&gt;Calidad Premiun&lt;/p&gt;
+                    &lt;p class&#x3D;&quot;precio&quot;&gt;$45000&lt;/p&gt;
+                    &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;agregar-carrito btn-2&quot; data-id&#x3D;&quot;12&quot;&gt;Agregar al carrito&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt; --&gt;
+        &lt;/div&gt;
+    &lt;/main&gt;
+
+    &lt;section class&#x3D;&quot;icons container&quot;&gt;
+        &lt;div class&#x3D;&quot;icon-1&quot;&gt;
+            &lt;div class&#x3D;&quot;icon-txt&quot;&gt;
+                &lt;h3&gt;NOTA IMPORTANTE&lt;/h3&gt;
+                &lt;p&gt;
+                    ofrecemos una amplia selección de vinos premium al por mayor, perfectos para negocios que buscan calidad y variedad. Desde restaurantes hasta tiendas especializadas, proporcionamos excelencia en cada botella para satisfacer a tus clientes. Descubre cómo podemos ayudarte a enriquecer tu oferta y potenciar tu negocio.
+                &lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;!-- Modal de Pago 
+    &lt;div class&#x3D;&quot;modal fade&quot; id&#x3D;&quot;modalPago&quot; tabindex&#x3D;&quot;-1&quot; aria-labelledby&#x3D;&quot;modalPagoLabel&quot; aria-hidden&#x3D;&quot;true&quot;&gt;
+        &lt;div class&#x3D;&quot;modal-dialog&quot;&gt;
+            &lt;div class&#x3D;&quot;modal-content&quot;&gt;
+                &lt;div class&#x3D;&quot;modal-header&quot;&gt;
+                    &lt;h5 class&#x3D;&quot;modal-title&quot; id&#x3D;&quot;modalPagoLabel&quot;&gt;Formulario de Pago&lt;/h5&gt;
+                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn-close&quot; data-bs-dismiss&#x3D;&quot;modal&quot; aria-label&#x3D;&quot;Close&quot;&gt;&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;modal-body&quot;&gt;
+                    &lt;form id&#x3D;&quot;form-pago&quot; class&#x3D;&quot;form-pago&quot;&gt;
+                        &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+                            &lt;label for&#x3D;&quot;nombre&quot; class&#x3D;&quot;form-label&quot;&gt;Nombre Completo:&lt;/label&gt;
+                            &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;nombre&quot; name&#x3D;&quot;nombre&quot; required&gt;
+                        &lt;/div&gt;
+                        &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+                            &lt;label for&#x3D;&quot;email&quot; class&#x3D;&quot;form-label&quot;&gt;Correo Electrónico:&lt;/label&gt;
+                            &lt;input type&#x3D;&quot;email&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;email&quot; name&#x3D;&quot;email&quot; required&gt;
+                        &lt;/div&gt;
+                        &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+                            &lt;label for&#x3D;&quot;direccion&quot; class&#x3D;&quot;form-label&quot;&gt;Dirección de Envío:&lt;/label&gt;
+                            &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;direccion&quot; name&#x3D;&quot;direccion&quot; required&gt;
+                        &lt;/div&gt;
+                        &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+                            &lt;label for&#x3D;&quot;tarjeta&quot; class&#x3D;&quot;form-label&quot;&gt;Número de Tarjeta:&lt;/label&gt;
+                            &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;tarjeta&quot; name&#x3D;&quot;tarjeta&quot; required&gt;
+                        &lt;/div&gt;
+                        &lt;div class&#x3D;&quot;row mb-3&quot;&gt;
+                            &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+                                &lt;label for&#x3D;&quot;fecha-expiracion&quot; class&#x3D;&quot;form-label&quot;&gt;Fecha de Expiración:&lt;/label&gt;
+                                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;fecha-expiracion&quot; name&#x3D;&quot;fecha-expiracion&quot; placeholder&#x3D;&quot;MM/AA&quot; required&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+                                &lt;label for&#x3D;&quot;cvv&quot; class&#x3D;&quot;form-label&quot;&gt;CVV:&lt;/label&gt;
+                                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;cvv&quot; name&#x3D;&quot;cvv&quot; required&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-primary w-100&quot;&gt;Realizar Pago&lt;/button&gt;
+                    &lt;/form&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+--&gt;
+    &lt;footer class&#x3D;&quot;footer&quot;&gt;
+        &lt;div class&#x3D;&quot;footer-content container&quot;&gt;
+          &lt;div class&#x3D;&quot;link&quot;&gt;
+              &lt;h3&gt;Enlaces&lt;/h3&gt;
+              &lt;ul&gt;
+                  &lt;li&gt;&lt;a href&#x3D;&quot;index.html&quot;&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href&#x3D;&quot;productos.html&quot;&gt;Productos&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href&#x3D;&quot;nosotros.html&quot;&gt;Nosotros&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href&#x3D;&quot;contacto.html&quot;&gt;Contacto&lt;/a&gt;&lt;/li&gt;
+              &lt;/ul&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;link&quot;&gt;
+              &lt;h3&gt;Redes Sociales&lt;/h3&gt;
+              &lt;ul&gt;
+                  &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;Facebook&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;Instagram&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;LinkedIn&lt;/a&gt;&lt;/li&gt;
+              &lt;/ul&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;link&quot;&gt;
+              &lt;h3&gt;Contacto&lt;/h3&gt;
+              &lt;ul&gt;
+                  &lt;li&gt;Amunategui 178, 5to piso, Santiago-Chile&lt;/li&gt;
+                  &lt;li&gt;Teléfono: +562 5406211&lt;/li&gt;
+                  &lt;li&gt;contacto&amp;#64;vinachos.cl&lt;/li&gt;
+              &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./products.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import url(&#x27;https://fonts.googleapis.com/css2?family&#x3D;Oswald:wght@400;500;600;700&amp;family&#x3D;Poppins:wght@400;500;600;700;800&amp;display&#x3D;swap&#x27;);
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    font-family: &#x27;poppins&#x27;,sans-serif;
+    max-width: 100%;
+    align-items: center;
+    flex-direction: column;
+
+}
+.wrapper {
+    flex: 1;  /* Esto hará que el contenido se expanda ocupando todo el espacio disponible, empujando el footer hacia abajo */
+}
+
+
+img{
+    max-width: 100%;
+}
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header{
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    min-height: 88vh;
+    background-color: #f5f5f5;
+    padding: 70px;
+}
+
+
+.menu{
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex  ;
+    align-items:center;
+    justify-content: space-between;
+}
+
+.logo{
+font-size: 25px;
+color: #111111;
+text-transform: uppercase;
+font-weight: 800;
+text-decoration: none; 
+
+}
+
+.logo:hover {
+    text-decoration: none;
+    color: #111111; /* Confirma que no hay subrayado al pasar el ratón */
+}
+.menu .navbar ul li{
+    position: relative;
+    float: left;
+
+}
+#nosotros-header {
+    display: flex;
+    align-items: center;
+    min-height: auto; /* Ajusta la altura según tus necesidades */
+    background-color: #f5f5f5;
+    padding: 20px;
+    text-decoration: none;
+}
+#contacto-header {
+    display: flex;
+    align-items: center;
+    min-height: auto; /* Ajusta la altura según tus necesidades */
+    background-color: #f5f5f5;
+    padding: 20px;
+    text-decoration: none;
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 20px;
+    color: #111111;
+}
+
+#menu{
+
+    display: none;
+}
+.menu-icono{
+
+    width: 25px;
+}
+
+
+.menu label{
+    cursor: pointer;
+    display: none;
+}
+.submenu{
+    position: relative;
+}
+.submenu #carrito {
+    display: none;
+}
+
+.submenu:hover #carrito{
+    display: block;
+    position: absolute;
+    right: 0;
+    backdrop-filter: blur(10px);
+    top: 100%;
+    z-index: 1;
+    background-color: #4E4b5076;
+    padding: 20PX;
+    min-width: 400px;
+}
+
+table{
+    width: 100%;
+}
+th, td{
+
+    color:#ffffff ;
+}
+.borrar{
+
+    background-color: #111111;
+    border-radius: 50%;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.header-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    padding: 0 200px;
+
+
+}
+
+.header-img{
+    flex-basis: 50%;
+    text-align: center;
+}
+
+.header-txt h1{
+    font-size: 90px;
+    text-transform: uppercase;
+    line-height: 1;
+    color: #111111;
+    font-family: &#x27;oswald&#x27;,sans-serif;
+    margin-bottom: 15px;
+}
+.header-txt p{
+
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.btn-1{
+
+    display: inline-block;
+    padding: 11px 25px;
+    background-color: #111111;
+    color: #ffffff;
+    border-radius: 5px;
+    transition: background-color 0.3s; /* Suaviza la transición del cambio de color */
+}
+.btn-1:hover {
+    background-color: #bc2020;  /* Color de fondo al pasar el ratón */
+    color:#ffffff;             /* Opcional: cambia el color de texto si es necesario */
+}
+
+
+.ofert{
+    padding: 20px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+}    
+.ofert-1{
+    display: flex;
+    align-items: center;
+    flex-basis: calc(33.3% - 15px);
+    padding: 35px;
+}
+
+.ofert-img{
+
+    flex-basis: 50%;
+    margin-right: 15px;
+}
+
+.ofert-img img {
+    width: 250px;
+    }
+.ofert-txt{
+    flex-basis: 50%;
+    text-align: center;
+
+}
+.ofert-txt h3{
+    color:#111111;
+    font-family:&#x27;Oswald&#x27;,sans-serif;
+    font-size: 25px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.btn-2{
+
+    display: inline-block;
+    padding: 7px 10px;
+    background-color: #111111;
+    color:#ffffff ;
+    border-radius: 5px;
+    font-size: 15px;
+    transition: background-color 0.3s;
+}
+.btn-2:hover {
+    background-color: #bc2020;  /* Color de fondo al pasar el ratón */
+    color:#ffffff;   
+}
+.products{
+padding: 50px;
+text-align: center;
+}
+
+.products h2{
+    color: #111111;
+    font-family:&#x27;Oswald&#x27;,sans-serif; ;
+    font-size: 50px;
+    text-transform: uppercase;
+}
+
+
+.product-content{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 50px
+
+}
+.product{
+    width: 300px;
+    
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,.1);
+
+}
+
+
+
+.product img{
+    width: 250px;
+    height: 350px;
+    margin-bottom: 20px;
+
+}
+
+
+.product h3{
+font-size: 20px;
+color: #111111;
+font-family:&#x27;Oswald&#x27;,sans-serif; 
+text-transform: uppercase;
+margin-bottom: 15px;
+}
+
+.product p, .precio{
+    font-size: 16px ;
+    color: #111111;
+    margin-bottom: 15px;
+    
+}
+.precio {
+    font-weight: 800;
+}
+
+.icons{
+    padding: 50px 0 100px 0;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.icon-1{
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+    background-color: #f5f5f5;
+
+}
+
+.icon-txt h3{
+    font-size: 20px;
+    color: #111111;
+    font-family:&#x27;Oswald&#x27;,sans-serif;
+    text-transform: uppercase;
+
+}
+
+.icon-txt {
+    font-size: 16px;
+    color: #111111;    
+
+}
+.blog {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom:100px ;
+}
+
+.blog-1{
+
+    flex-basis: calc(33.3% - 30px);
+}
+
+.blog-2{
+
+    flex-basis: calc(33.3% - 30px);
+}
+
+.blog-1 img {
+    margin-bottom: 20px;
+}
+
+.blog-2 img {
+    margin-bottom: 20px;
+}
+
+.blog-1 h3{
+    font-size: 20px;
+    color: #111111;
+    font: &#x27;Oswald&#x27;,sans-serif; 
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    
+}
+
+.blog-2 h3{
+    font-size: 20px;
+    color: #111111;
+    font: &#x27;Oswald&#x27;,sans-serif; 
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    
+}
+
+.blog-1 p {
+    font-size: 16px;
+    color: #111111;
+}
+
+.blog-2 p {
+    font-size: 16px;
+    color: #111111;
+}
+
+.footer{
+    width: 100%;
+    padding: 20px;
+    background-color: #111111;
+    /* O &#x27;fixed&#x27; si quieres que siempre esté visible al final de la ventana */
+    bottom: 0;
+    left: 0;
+}
+
+.footer-content{
+    display: flex;
+    color: #dcdcdcdc;; /* Esto establece el color del texto a blanco */
+    justify-content: space-between;
+    
+}
+.nt .link {
+    
+    color: #dcdcdcdc; /* Color del texto oscuro para contrastar con el fondo claro */
+    padding: 15px; /* Añade un poco de espacio alrededor del contenido */
+    border-radius: 5px; /* Opcional: bordes redondeados para un aspecto más suave */
+}
+.link h3{
+    font-size: 18px;
+    color: #ffffff;
+    font-family: &#x27;Oswald&#x27;,sans-serif;;
+    text-transform: uppercase;
+    margin-bottom: px;
+}
+
+.link a{
+    font-size: 18px;
+    color: #dcdcdcdc;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 991px ){
+
+    .menu{
+
+        padding: 20px;
+    }
+
+    .menu label{
+
+        display: initial;
+    }
+    .menu .navbar{
+        position: absolute;
+        top: 100px;
+        left: 0;
+        right: 0;
+        background-color: #181818;
+        display: none;
+    }
+    .menu .navbar ul li {
+
+        width: 100%;
+    }
+    .menu ul li a{
+
+        color: #ffffff;
+    }
+
+    #menu:checked ~ .navbar{
+        display: initial;
+
+    }
+    .logo{
+        display: none;
+    }
+    .submenu:hover #carrito {
+        min-width: 100%;
+    }
+
+    .header{
+        min-height: 0vh;
+
+    }
+    .header-content{
+        padding: 50px 0 ;
+        flex-direction: column;
+    }
+    .header-img{
+        display: none;
+
+    }
+    .header-txt{
+        flex-basis: 100%;
+        text-align: center;
+
+    }
+
+    .header-txt-h1{
+        font-size: 70px;
+    }
+    .ofert{
+        padding: 30px 30px 0 30px;
+        flex-direction: column;
+    }
+    .ofert-1{
+    margin-bottom: 30px;
+    }
+    .products{
+        padding: 0 30px 30px 30px;
+    }
+    .products h2{
+
+        margin-bottom: 30px;
+    }
+    .product-content{
+        grid-template-columns: repeat(1,1fr);
+        gap: 30px;
+    }.product img{
+        width: 200px;
+        height: 280px;
+    }
+    .icons{
+        padding: 30px;
+        flex-direction: column;
+
+    }
+    .icon-1{
+        margin-bottom: 30px;
+    }
+
+    .blog{
+        padding: 0 30px 30px 30px;
+        flex-direction: column;
+    }
+    .blog-1{
+        margin-bottom: 30px;
+
+    }
+    .footer{
+        padding: 30px;
+
+    }
+    .footer-content{
+        flex-direction: column;
+        text-align: centers;
+    }
+} 
+
+
+/* Estilos base para contenedores de formularios */
+.form-container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+/* Estilos específicos para el formulario de login */
+.login-container input[type&#x3D;&quot;email&quot;],
+.login-container input[type&#x3D;&quot;password&quot;],
+.login-container input[type&#x3D;&quot;submit&quot;] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 24px);
+}
+
+.login-container input[type&#x3D;&quot;submit&quot;] {
+    background-color: #111111;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-container input[type&#x3D;&quot;submit&quot;]:hover {
+    background-color: #bc2020;
+}
+
+/* Estilos específicos para el formulario de registro */
+.register-container input[type&#x3D;&quot;text&quot;],
+.register-container input[type&#x3D;&quot;email&quot;],
+.register-container input[type&#x3D;&quot;password&quot;],
+.register-container input[type&#x3D;&quot;submit&quot;] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 24px);
+}
+
+.register-container input[type&#x3D;&quot;submit&quot;] {
+    background-color: #111111;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.register-container input[type&#x3D;&quot;submit&quot;]:hover {
+    background-color: #bc2020;
+}
+
+
+.form-container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px; /* Adecuado para formularios */
+    box-sizing: border-box; /* Asegura que padding no afecte el ancho total */
+    margin: 20px; /* Espacio alrededor para evitar tocar los bordes */
+}
+
+/* Estilos para formularios específicos no necesitan cambiar, se mantienen como están */
+
+/* Responsivo para dispositivos más pequeños */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 20px;
+        max-width: 90%; /* Más pequeño en dispositivos móviles */
+    }
+}
+
+
+
+/* Estilos específicos para la página de recuperación de contraseña */
+.password-recovery-container {
+    max-width: 400px; /* Mantiene el formulario estrecho y manejable */
+    margin: auto; /* Centra el formulario en la página */
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center; /* Centra el texto y los elementos del formulario */
+}
+
+.password-recovery-container input[type&#x3D;&quot;email&quot;],
+.password-recovery-container input[type&#x3D;&quot;submit&quot;] {
+    width: calc(100% - 20px); /* Ajusta el ancho tomando en cuenta el padding */
+    padding: 10px;
+    margin-top: 10px; /* Espacio entre los elementos del formulario */
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+.password-recovery-container input[type&#x3D;&quot;submit&quot;] {
+    background-color: #111111;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.password-recovery-container input[type&#x3D;&quot;submit&quot;]:hover {
+    background-color: #333333; /* Efecto al pasar el mouse */
+}
+
+.password-recovery-container a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.password-recovery-container a:hover {
+    text-decoration: underline;
+}
+
+.password-recovery-container p {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+
+/* Aplicar flexbox solo en los contenedores de formularios específicos */
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Altura mínima del viewport para asegurar el centrado vertical */
+    width: 100%; /* Ocupa todo el ancho disponible */
+}
+
+.form-container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px; /* Adecuado para formularios */
+    text-align: center;
+    position: relative; /* Posicionamiento relativo dentro del flex container */
+}
+
+/* Manten los estilos específicos de tus formularios sin cambios */
+.login-container input[type&#x3D;&quot;email&quot;],
+.login-container input[type&#x3D;&quot;password&quot;],
+.login-container input[type&#x3D;&quot;submit&quot;],
+.register-container input[type&#x3D;&quot;text&quot;],
+.register-container input[type&#x3D;&quot;email&quot;],
+.register-container input[type&#x3D;&quot;password&quot;],
+.register-container input[type&#x3D;&quot;submit&quot;],
+.password-recovery-container input[type&#x3D;&quot;email&quot;],
+.password-recovery-container input[type&#x3D;&quot;submit&quot;] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 20px); /* Ajusta el ancho tomando en cuenta el padding */
+}
+
+.login-container input[type&#x3D;&quot;submit&quot;],
+.register-container input[type&#x3D;&quot;submit&quot;],
+.password-recovery-container input[type&#x3D;&quot;submit&quot;] {
+    background-color: #111111;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-container input[type&#x3D;&quot;submit&quot;]:hover,
+.register-container input[type&#x3D;&quot;submit&quot;]:hover,
+.password-recovery-container input[type&#x3D;&quot;submit&quot;]:hover {
+    background-color: #333333; /* Cambio de color al pasar el mouse */
+}
+.form-wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.password-recovery-container {
+    width: 100%;
+    max-width: 400px;
+}
+
+
+
+.form-wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5; /* Fondo opcional para la página */
+}
+
+.password-recovery-container {
+    width: 100%;
+    max-width: 400px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.custom-alert {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: none; /* Oculto por defecto */
+}
+
+.custom-alert .close {
+    cursor: pointer;
+    padding-left: 10px;
+    font-size: 1.2rem;
+}
+
+.blog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.blog-entry {
+    display: flex; /* Establece el contenedor como flexible */
+    align-items: flex-start; /* Alinea los ítems al inicio verticalmente */
+    background-color: #fff; /* Fondo blanco */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+    margin-bottom: 20px; /* Espacio entre entradas */
+    border-radius: 8px; /* Bordes redondeados */
+    overflow: hidden; /* Evita que los contenidos desborden */
+}
+
+.blog-entry img {
+    width: 40%; /* Ancho de la imagen dentro del contenedor */
+    height: auto; /* Altura automática para mantener la proporción */
+    display: block; /* Elimina espacio debajo de la imagen */
+}
+
+.entry-content {
+    padding: 15px; /* Espacio interior alrededor del texto */
+    flex-grow: 1; /* Permite que el contenido de texto ocupe el espacio restante */
+    display: flex; /* Dispone el contenido en columna */
+    flex-direction: column; /* Organiza el título y el párrafo verticalmente */
+    justify-content: center; /* Centra el contenido verticalmente */
+}
+
+.entry-content h3 {
+    margin-top: 0;
+    margin-bottom: 10px; /* Espacio entre el título y el párrafo */
+    font-size: 20px; /* Tamaño del título */
+    color: #333; /* Color del texto */
+    text-transform: uppercase;
+    
+}
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 400px; /* Ancho máximo para el formulario */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.password-recovery-container {
+    width: 100%;
+}
+
+@media (min-width: 576px) {
+    .password-recovery-container {
+        padding: 2rem; /* Ajuste de padding para pantallas más grandes */
+    }
+}
+
+.btn-custom {
+    background-color: #111111; /* Color personalizado */
+    border-color: #111111; /* Color personalizado */
+    color: #f5f5f5;
+    width: 100px; /* Ancho personalizado */
+    margin: 0 auto;
+    display: block;
+}
+
+.btn-custom:hover {
+    background-color: #bc2020;   /* Color al pasar el mouse */
+    border-color: #f5f5f5;  
+    color: #f5f5f5;
+}
+
+/* Estilo para los enlaces */
+.login-link, .password-recovery a {
+    color: #007bff; /* Color del enlace */
+    text-decoration: none; /* Sin subrayado */
+}
+
+/* Personalización del fondo de la alerta */
+.swal2-popup {
+    background-color: #f0f0f0 !important; /* Cambia el color de fondo */
+    color: #333 !important; /* Cambia el color del texto */
+}
+
+/* Personalización del título */
+.swal2-title {
+    color: #ff6347 !important; /* Cambia el color del título */
+}
+
+/* Personalización del texto del contenido */
+.swal2-content {
+    color: #555 !important; /* Cambia el color del texto del contenido */
+}
+
+/* Personalización del botón de confirmación */
+.swal2-confirm {
+    background-color: #4CAF50 !important; /* Cambia el color de fondo del botón */
+    color: #fff !important; /* Cambia el color del texto del botón */
+}
+
+/* Personalización del botón de cancelación */
+.swal2-cancel {
+    background-color: #f44336 !important; /* Cambia el color de fondo del botón */
+    color: #fff !important; /* Cambia el color del texto del botón */
+}
+/* Estilos para la tabla */
+.table thead th {
+    background-color: #343a40; /* Fondo de los encabezados */
+    color: #ffffff; /* Color del texto de los encabezados */
+}
+
+.table tbody tr {
+    background-color: #f8f9fa; /* Fondo de las filas */
+}
+
+.table tbody tr:nth-of-type(odd) {
+    background-color: #e9ecef; /* Fondo de las filas impares */
+}
+
+.table tbody td {
+    color: #343a40; /* Color del texto de las celdas del cuerpo de la tabla */
+}
+
+.table tbody tr:hover {
+    background-color: #d6d8db; /* Fondo al pasar el ratón */
+}
+
+/* Estilos para los botones */
+.btn-warning {
+    background-color: #ffcc00;
+    border-color: #ffcc00;
+    color: #ffffff;
+}
+
+.btn-warning:hover {
+    background-color: #e6b800;
+    border-color: #e6b800;
+}
+
+.btn-danger {
+    background-color: #ff4444;
+    border-color: #ff4444;
+    color: #ffffff;
+}
+
+.btn-danger:hover {
+    background-color: #cc0000;
+    border-color: #cc0000;
+}
+
+/* Estilos para los campos del modal de edición */
+.modal-body .form-label {
+    color: #343a40; /* Cambia este color según tu preferencia */
+}
+
+.modal-body .form-control {
+    color: #343a40; /* Cambia este color según tu preferencia */
+}
+#logout-button {
+    border: none;
+    background-color: transparent;
+    color: #111111; /* Color rojo para indicar acción de cierre */
+    font-size: 16px; /* Tamaño del texto */
+    padding: 0 10px; /* Espaciado para fácil clic */
+}
+
+#logout-button:hover {
+    border: none;
+    background-color: transparent;
+    color: #cc0000; /* Color rojo para indicar acción de cierre */
+    font-size: 16px; /* Tamaño del texto */
+    padding: 10px; /* Espaciado para fácil clic */
+}
+
+#user-info span {
+    margin-right: 10px; /* Espaciado entre el nombre del usuario y el botón */
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><body>    <header class="header">               <div class="header-content container">            <div class="header-img">                <img src="assets/images/right2.png" alt="header image" />            </div>            <div class="header-txt">                <h1>Productos</h1>                <p>mejores precio del pais</p>                <a routerLink="/productos" class="btn-1">Productos a la Venta</a>            </div>        </div>    </header>        <section class="ofert container">        <div class="ofert-1">            <div class="ofert-img">                <img src="assets/images/f1.png" alt="" >            </div>            <div class="ofert-txt">                <h3>VINO TINTO PREMIUM</h3>                <a href="#" class="btn-2">Informacion</a>            </div>            </div>        <div class="ofert-1">            <div class="ofert-img">                <img src="assets/images/f2.png" alt="" >            </div>            <div class="ofert-txt">                <h3>VINOS BLANCOS PREMIUM</h3>                <a href="#" class="btn-2">Informacion</a>            </div>            </div>        <div class="ofert-1">            <div class="ofert-img">                <img src="assets/images/f3.png" alt="" >            </div>            <div class="ofert-txt">                <h3>ESPUMANTES PREMIUM</h3>                <a href="#" class="btn-2">Informacion</a>            </div>            </div>    </section>    <main class="products container">        <h2>VENTAS PRODUCTO X UNIDAD</h2>        <div class="product-content">            @for ( producto of Productos; track producto.id) {          <div  class="product">            <img [src]="producto.foto" alt="{{producto.nombre}}" />            <div class="product-txt">              <h3>{{producto.nombre}}</h3>              <p>{{producto.descripcion}}</p>              <p class="precio">${{producto.precio}}</p>              <button type="button" class="agregar-carrito btn-2" (click)="agregarAlCarrito(producto)" [attr.data-id]="producto.id">Agregar al carrito</button>            </div>                  </div>        }                                        <!-- <div class="product">                <img src="assets/images/2.png" alt="" />                <div class="product-txt">                    <h3>vino 2</h3>                    <p>Calidad Premiun</p>                    <p class="precio">$12000</p>                    <a href="#" class="agregar-carrito btn-2" data-id="2">Agregar al carrito</a>                </div>            </div>            <div class="product">                <img src="assets/images/3.png" alt="" />                <div class="product-txt">                    <h3>vino 3</h3>                    <p>Calidad Premiun</p>                    <p class="precio">$23000</p>                    <a href="#" class="agregar-carrito btn-2" data-id="3">Agregar al carrito</a>                </div>            </div>            <div class="product">                <img src="assets/images/4.png" alt="" />                <div class="product-txt">                    <h3>vino 4</h3>                    <p>Calidad Premiun</p>                    <p class="precio">$18000</p>                    <a href="#" class="agregar-carrito btn-2" data-id="4">Agregar al carrito</a>                </div>            </div>            <div class="product">                <img src="assets/images/5.png" alt="" />                <div class="product-txt">                    <h3>vino 5</h3>                    <p>Calidad Premiun</p>                    <p class="precio">$10000</p>                    <a href="#" class="agregar-carrito btn-2" data-id="5">Agregar al carrito</a>                </div>            </div>            <div class="product">                <img src="assets/images/6.png" alt="" />                <div class="product-txt">                    <h3>vino 6</h3>                    <p>Calidad Premiun</p>                    <p class="precio">$13500</p>                    <a href="#" class="agregar-carrito btn-2" data-id="6">Agregar al carrito</a>                </div>            </div>            <div class="product">                <img src="assets/images/10.png" alt="" />                <div class="product-txt">                    <h3>Pack 1</h3>                    <p>Calidad Premiun</p>                    <p class="precio">$20000</p>                    <a href="#" class="agregar-carrito btn-2" data-id="7">Agregar al carrito</a>                </div>            </div>            <div class="product">                <img src="assets/images/20.png" alt="" />                <div class="product-txt">                    <h3>Pack 2</h3>                    <p>Calidad Premiun</p>                    <p class="precio">$12000</p>                    <a href="#" class="agregar-carrito btn-2" data-id="8">Agregar al carrito</a>                </div>            </div>            <div class="product">                <img src="assets/images/30.png" alt="" />                <div class="product-txt">                    <h3>Pack 3</h3>                    <p>Calidad Premiun</p>                    <p class="precio">$98000</p>                    <a href="#" class="agregar-carrito btn-2" data-id="9">Agregar al carrito</a>                </div>            </div>            <div class="product">                <img src="assets/images/40.png" alt="" />                <div class="product-txt">                    <h3>Pack 4</h3>                    <p>Calidad Premiun</p>                    <p class="precio">$40000</p>                    <a href="#" class="agregar-carrito btn-2" data-id="10">Agregar al carrito</a>                </div>            </div>            <div class="product">                <img src="assets/images/50.png" alt="" />                <div class="product-txt">                    <h3>Pack 5</h3>                    <p>Calidad Premiun</p>                    <p class="precio">$65000</p>                    <a href="#" class="agregar-carrito btn-2" data-id="11">Agregar al carrito</a>                </div>            </div>            <div class="product">                <img src="assets/images/60.png" alt="" />                <div class="product-txt">                    <h3>Pack 6</h3>                    <p>Calidad Premiun</p>                    <p class="precio">$45000</p>                    <a href="#" class="agregar-carrito btn-2" data-id="12">Agregar al carrito</a>                </div>            </div> -->        </div>    </main>    <section class="icons container">        <div class="icon-1">            <div class="icon-txt">                <h3>NOTA IMPORTANTE</h3>                <p>                    ofrecemos una amplia selección de vinos premium al por mayor, perfectos para negocios que buscan calidad y variedad. Desde restaurantes hasta tiendas especializadas, proporcionamos excelencia en cada botella para satisfacer a tus clientes. Descubre cómo podemos ayudarte a enriquecer tu oferta y potenciar tu negocio.                </p>            </div>        </div>    </section>    <!-- Modal de Pago     <div class="modal fade" id="modalPago" tabindex="-1" aria-labelledby="modalPagoLabel" aria-hidden="true">        <div class="modal-dialog">            <div class="modal-content">                <div class="modal-header">                    <h5 class="modal-title" id="modalPagoLabel">Formulario de Pago</h5>                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>                </div>                <div class="modal-body">                    <form id="form-pago" class="form-pago">                        <div class="mb-3">                            <label for="nombre" class="form-label">Nombre Completo:</label>                            <input type="text" class="form-control" id="nombre" name="nombre" required>                        </div>                        <div class="mb-3">                            <label for="email" class="form-label">Correo Electrónico:</label>                            <input type="email" class="form-control" id="email" name="email" required>                        </div>                        <div class="mb-3">                            <label for="direccion" class="form-label">Dirección de Envío:</label>                            <input type="text" class="form-control" id="direccion" name="direccion" required>                        </div>                        <div class="mb-3">                            <label for="tarjeta" class="form-label">Número de Tarjeta:</label>                            <input type="text" class="form-control" id="tarjeta" name="tarjeta" required>                        </div>                        <div class="row mb-3">                            <div class="col-md-6">                                <label for="fecha-expiracion" class="form-label">Fecha de Expiración:</label>                                <input type="text" class="form-control" id="fecha-expiracion" name="fecha-expiracion" placeholder="MM/AA" required>                            </div>                            <div class="col-md-6">                                <label for="cvv" class="form-label">CVV:</label>                                <input type="text" class="form-control" id="cvv" name="cvv" required>                            </div>                        </div>                        <button type="submit" class="btn btn-primary w-100">Realizar Pago</button>                    </form>                </div>            </div>        </div>    </div>-->    <footer class="footer">        <div class="footer-content container">          <div class="link">              <h3>Enlaces</h3>              <ul>                  <li><a href="index.html">Inicio</a></li>                  <li><a href="productos.html">Productos</a></li>                  <li><a href="nosotros.html">Nosotros</a></li>                  <li><a href="contacto.html">Contacto</a></li>              </ul>          </div>          <div class="link">              <h3>Redes Sociales</h3>              <ul>                  <li><a href="#">Facebook</a></li>                  <li><a href="#">Instagram</a></li>                  <li><a href="#">LinkedIn</a></li>              </ul>          </div>          <div class="link">              <h3>Contacto</h3>              <ul>                  <li>Amunategui 178, 5to piso, Santiago-Chile</li>                  <li>Teléfono: +562 5406211</li>                  <li>contacto&#64;vinachos.cl</li>              </ul>          </div>        </div>    </footer></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ContactoComponent', 'selector': 'app-contacto'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NosotrosComponent', 'selector': 'app-nosotros'},{'name': 'ProductsComponent', 'selector': 'app-products'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'UsuariosComponent', 'selector': 'app-usuarios'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ProductsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ProductsComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,136 @@
+<header class="header" id="nosotros-header">
+  <div class="menu container">
+    <!-- 
+      @description Enlace al inicio con el logo 
+      @routerLink Vincula al inicio
+      @class Define el estilo del logo y quita la decoración del texto 
+    -->
+    <a routerLink="/home" class="logo text-decoration-none">VINACHOS</a>
+    
+    <!-- 
+      @description Checkbox para el menú hamburguesa 
+      @type checkbox Define el input como checkbox
+      @id menu Identificador único para el checkbox 
+    -->
+    <input type="checkbox" id="menu" />
+    
+    <!-- 
+      @description Etiqueta para el menú hamburguesa 
+      @for menu Asocia el label con el checkbox 
+      @img Muestra el icono del menú
+      @src Ruta de la imagen del icono del menú
+      @class Define el estilo del icono del menú
+      @alt Texto alternativo para la imagen del icono del menú 
+    -->
+    <label for="menu">
+      <img src="assets/images/menu.png" class="menu-icono" alt="menu" />
+    </label>
+    
+    <!-- 
+      @description Navegación principal 
+      @class Define el estilo de la barra de navegación 
+    -->
+    <nav class="navbar">
+      <ul>
+        <!-- 
+          @description Enlaces de navegación 
+          @routerLink Vincula a la ruta especificada 
+        -->
+        <li><a routerLink="/home">Inicio</a></li>
+        <li><a routerLink="/productos">Productos</a></li>
+        <li><a routerLink="/nosotros">Nosotros</a></li>
+        <li><a routerLink="/contacto">Contacto</a></li>
+        
+        <!-- 
+          @description Mostrar opciones adicionales si el usuario tiene permisos de administrador 
+          @ngIf Directiva para verificar permisos del usuario 
+        -->
+        <ng-container *ngIf="userInfo && userInfo.permisos === 'admin'">
+          <li class="submenu">
+            <a href="#">Mantenedores</a>
+            <ul class="submenu-items">
+              <li><a routerLink="/usuarios">Usuarios</a></li>
+              <li><a routerLink="/mntproductos">Productos</a></li>
+            </ul>
+          </li>
+        </ng-container>
+      </ul>
+    </nav>
+    
+    <!-- 
+      @description Sección del carrito de compras 
+    -->
+    <div>
+      <ul>
+        <li class="submenu">
+          <!-- 
+            @img Muestra el icono del carrito
+            @src Ruta de la imagen del icono del carrito
+            @id Identificador del icono del carrito
+            @alt Texto alternativo para la imagen del icono del carrito 
+          -->
+          <img src="assets/images/car.svg" id="img-carrito" alt="carrito" />
+          <div id="carrito">
+            <table id="lista-carrito">
+              <thead>
+                <tr>
+                  <th>Imagen</th>
+                  <th>Nombre</th>
+                  <th>Precio</th>
+                  <th>Cantidad</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- 
+                  @description Iterar sobre los artículos del carrito 
+                  @ngFor Directiva para iterar sobre cartItems 
+                -->
+                <tr *ngFor="let item of cartItems">
+                  <td><img [src]="item.foto" [alt]="item.nombre" /></td>
+                  <td>{{ item.nombre }}</td>
+                  <td>{{ item.precio }}</td>
+                  <td>{{ item.cantidad }}</td>
+                  <td>
+                    <!-- 
+                      @description Botón para eliminar un artículo del carrito 
+                      @click Evento de clic para eliminar el artículo 
+                    -->
+                    <button (click)="removeFromCart(item.id)">Eliminar</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- 
+              @description Mostrar el total del carrito 
+              @currency Pipe para formatear la moneda 
+            -->
+            <div id="total-carrito">Total: {{ total | currency }}</div>
+            
+            <!-- 
+              @description Botones para vaciar el carrito y proceder al pago 
+              @click Evento de clic para vaciar el carrito 
+              @routerLink Vincula a la página de pago 
+            -->
+            <a href="#" id="vaciar-carrito" class="btn-2" (click)="clearCart()">Vaciar Carrito</a>
+            <a routerLink="/pagar" class="btn-2">Pagar</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    
+    <!-- 
+      @description Elemento para mostrar el nombre del usuario 
+      @id Identificador del elemento que muestra el nombre del usuario 
+      @class Define el estilo del elemento que muestra el nombre del usuario 
+    -->
+    <div id="user-info" class="user-info">{{ currentUserName }}</div>
+    
+    <!-- 
+      @description Botón para cerrar sesión 
+      @id Identificador del botón de cierre de sesión 
+      @style Define el cursor como puntero para el botón 
+      @click Evento de clic para cerrar sesión 
+    -->
+    <button id="logout-button" style="cursor: pointer;" (click)="logout()">X</button>
+  </div>
+</header>

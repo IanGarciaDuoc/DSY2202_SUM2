@@ -1,0 +1,42 @@
+<div class="login-container">
+  <div class="form-container">
+    <!-- Encabezado del formulario de inicio de sesión -->
+    <h2>Iniciar Sesión</h2>
+    <!-- Formulario de inicio de sesión utilizando Formularios Reactivos de Angular -->
+    <form [formGroup]="formLogin" (ngSubmit)="submitForm()">
+      <!-- Muestra un mensaje de error si está presente -->
+      <div *ngIf="mensajeError" class="alert alert-danger">{{ mensajeError }}</div>
+      
+      <!-- Campo de entrada para el correo electrónico con mensajes de validación -->
+      <div class="form-group">
+        <input id="email" formControlName="email" type="email" placeholder="Correo Electrónico" />
+        <div *ngIf="formLogin.get('email')?.invalid && formLogin.get('email')?.touched" class="text-danger">
+          Email es requerido y debe ser válido.
+        </div>
+      </div>
+      
+      <!-- Campo de entrada para la contraseña con mensajes de validación -->
+      <div class="form-group">
+        <input id="password" formControlName="password" type="password" placeholder="Contraseña" />
+        <div *ngIf="formLogin.get('password')?.invalid && formLogin.get('password')?.touched" class="text-danger">
+          La contraseña es requerida.
+        </div>
+      </div>
+      
+      <!-- Botón de envío del formulario -->
+      <input type="submit" value="Ingresar" />
+      
+      <!-- Enlace para recuperar la contraseña olvidada -->
+      <div class="login-link">
+        <a href="/forgot-password">¿Olvidaste tu contraseña?</a>
+      </div>
+      
+      <!-- Enlace para registrarse si no se tiene una cuenta -->
+      <div class="login-link">
+        <div class="login-link">
+          ¿No tienes una cuenta? <a routerLink="'/registro'" (click)="onRegistroClick()">Regístrate</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

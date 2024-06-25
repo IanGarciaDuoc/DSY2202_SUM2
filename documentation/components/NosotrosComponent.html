@@ -1,0 +1,1351 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>dsy2202-sum2 documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">dsy2202-sum2 documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  NosotrosComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/nosotros/nosotros.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente de la sección &quot;Nosotros&quot;.</p>
+<p>Este componente se encarga de mostrar la información sobre la empresa o equipo.</p>
+
+    </p>
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-nosotros</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./nosotros.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./nosotros.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+
+/**
+ * Componente de la sección &quot;Nosotros&quot;.
+ *
+ * Este componente se encarga de mostrar la información sobre la empresa o equipo.
+ */
+@Component({
+  selector: &#x27;app-nosotros&#x27;,
+  standalone: true,
+  imports: [],
+  templateUrl: &#x27;./nosotros.component.html&#x27;,
+  styleUrls: [&#x27;./nosotros.component.css&#x27;]
+})
+export class NosotrosComponent {
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">
+  &lt;section class&#x3D;&quot;blog container&quot;&gt;
+    &lt;div class&#x3D;&quot;blog-entry&quot;&gt;
+      &lt;img src&#x3D;&quot;assets/images/nosotros.jpg&quot; alt&#x3D;&quot;Blog 1&quot;&gt;
+      &lt;div class&#x3D;&quot;entry-content&quot;&gt;
+          &lt;h3&gt;Nosotros&lt;/h3&gt;
+          &lt;p&gt;nos dedicamos a descubrir y seleccionar los mejores vinos, combinando tradición con una visión 
+            moderna de la viticultura. Nuestra misión es llevar a tu mesa vinos de alta calidad que destacan por su autenticidad y carácter.
+            Cada botella de Vinacho es un homenaje a la rica herencia vitivinícola y a la innovación enológica, diseñada para complacer paladares
+            que buscan experiencias genuinas y memorables. Únete a la familia Vinacho y eleva tus momentos especiales con nuestros vinos selectos, perfectos para cada ocasión..&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;blog-entry&quot;&gt;
+      &lt;img src&#x3D;&quot;assets/images/mision.jpg&quot; alt&#x3D;&quot;Blog 1&quot;&gt;
+      &lt;div class&#x3D;&quot;entry-content&quot;&gt;
+          &lt;h3&gt;mision&lt;/h3&gt;
+          &lt;p&gt;Nuestra misión en Vinacho es ofrecer vinos excepcionales que encanten los sentidos y celebren la riqueza del terroir. Nos comprometemos a seleccionar meticulosamente vinos que no solo respeten la tradición vitivinícola, sino que también promuevan prácticas sostenibles y responsables. Aspiramos a conectar a nuestros clientes con la cultura del vino a través de experiencias educativas y degustaciones que inspiren aprecio y pasión por el vino..&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;blog-entry&quot;&gt;
+      &lt;img src&#x3D;&quot;assets/images/vision.jpg&quot; alt&#x3D;&quot;Blog 1&quot;&gt;
+      &lt;div class&#x3D;&quot;entry-content&quot;&gt;
+          &lt;h3&gt;vision&lt;/h3&gt;
+          &lt;p&gt;En Vinacho, nuestra visión es ser reconocidos como una referencia en la industria vitivinícola por nuestra integridad, innovación y compromiso con la calidad. Nos proponemos expandir nuestra presencia en el mercado global, introduciendo los paladares del mundo a la diversidad y riqueza de los vinos. Al mirar hacia el futuro, buscamos innovar continuamente y adaptarnos a las nuevas tendencias y demandas del mercado, manteniendo siempre el respeto por nuestro legado y el medio ambiente.
+
+            Espero que estos ejemplos te sean útiles y puedan ser el punto de partida para reflejar los verdaderos valores y aspiraciones de Vinacho. Si hay algún aspecto particular que te gustaría incluir o modificar, házmelo saber para personalizar aún más estas declaraciones.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;footer class&#x3D;&quot;footer&quot;&gt;
+    &lt;div class&#x3D;&quot;footer-content container&quot;&gt;
+      &lt;div class&#x3D;&quot;link&quot;&gt;
+          &lt;h3&gt;Enlaces&lt;/h3&gt;
+          &lt;ul&gt;
+              &lt;li&gt;&lt;a href&#x3D;&quot;index.html&quot;&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href&#x3D;&quot;productos.html&quot;&gt;Productos&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href&#x3D;&quot;nosotros.html&quot;&gt;Nosotros&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href&#x3D;&quot;contacto.html&quot;&gt;Contacto&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;link&quot;&gt;
+          &lt;h3&gt;Redes Sociales&lt;/h3&gt;
+          &lt;ul&gt;
+              &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;Facebook&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;Instagram&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href&#x3D;&quot;#&quot;&gt;LinkedIn&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;link&quot;&gt;
+          &lt;h3&gt;Contacto&lt;/h3&gt;
+          &lt;ul&gt;
+              &lt;li&gt;Amunategui 178, 5to piso, Santiago-Chile&lt;/li&gt;
+              &lt;li&gt;Teléfono: +562 5406211&lt;/li&gt;
+              &lt;li&gt;contacto&amp;#64;vinachos.cl&lt;/li&gt;
+          &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/footer&gt;
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./nosotros.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import url(&#x27;https://fonts.googleapis.com/css2?family&#x3D;Oswald:wght@400;500;600;700&amp;family&#x3D;Poppins:wght@400;500;600;700;800&amp;display&#x3D;swap&#x27;);
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    font-family: &#x27;poppins&#x27;,sans-serif;
+    max-width: 100%;
+    align-items: center;
+    flex-direction: column;
+
+}
+.wrapper {
+    flex: 1;  /* Esto hará que el contenido se expanda ocupando todo el espacio disponible, empujando el footer hacia abajo */
+}
+
+
+img{
+    max-width: 100%;
+}
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header{
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    min-height: 88vh;
+    background-color: #f5f5f5;
+    padding: 70px;
+}
+
+
+.menu{
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex  ;
+    align-items:center;
+    justify-content: space-between;
+}
+
+.logo{
+font-size: 25px;
+color: #111111;
+text-transform: uppercase;
+font-weight: 800;
+text-decoration: none; 
+
+}
+
+.logo:hover {
+    text-decoration: none;
+    color: #111111; /* Confirma que no hay subrayado al pasar el ratón */
+}
+.menu .navbar ul li{
+    position: relative;
+    float: left;
+
+}
+#nosotros-header {
+    display: flex;
+    align-items: center;
+    min-height: auto; /* Ajusta la altura según tus necesidades */
+    background-color: #f5f5f5;
+    padding: 20px;
+    text-decoration: none;
+}
+#contacto-header {
+    display: flex;
+    align-items: center;
+    min-height: auto; /* Ajusta la altura según tus necesidades */
+    background-color: #f5f5f5;
+    padding: 20px;
+    text-decoration: none;
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 20px;
+    color: #111111;
+}
+
+#menu{
+
+    display: none;
+}
+.menu-icono{
+
+    width: 25px;
+}
+
+
+.menu label{
+    cursor: pointer;
+    display: none;
+}
+.submenu{
+    position: relative;
+}
+.submenu #carrito {
+    display: none;
+}
+
+.submenu:hover #carrito{
+    display: block;
+    position: absolute;
+    right: 0;
+    backdrop-filter: blur(10px);
+    top: 100%;
+    z-index: 1;
+    background-color: #4E4b5076;
+    padding: 20PX;
+    min-width: 400px;
+}
+
+table{
+    width: 100%;
+}
+th, td{
+
+    color:#ffffff ;
+}
+.borrar{
+
+    background-color: #111111;
+    border-radius: 50%;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.header-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    padding: 0 200px;
+
+
+}
+
+.header-img{
+    flex-basis: 50%;
+    text-align: center;
+}
+
+.header-txt h1{
+    font-size: 90px;
+    text-transform: uppercase;
+    line-height: 1;
+    color: #111111;
+    font-family: &#x27;oswald&#x27;,sans-serif;
+    margin-bottom: 15px;
+}
+.header-txt p{
+
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.btn-1{
+
+    display: inline-block;
+    padding: 11px 25px;
+    background-color: #111111;
+    color: #ffffff;
+    border-radius: 5px;
+    transition: background-color 0.3s; /* Suaviza la transición del cambio de color */
+}
+.btn-1:hover {
+    background-color: #bc2020;  /* Color de fondo al pasar el ratón */
+    color:#ffffff;             /* Opcional: cambia el color de texto si es necesario */
+}
+
+
+.ofert{
+    padding: 20px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+}    
+.ofert-1{
+    display: flex;
+    align-items: center;
+    flex-basis: calc(33.3% - 15px);
+    padding: 35px;
+}
+
+.ofert-img{
+
+    flex-basis: 50%;
+    margin-right: 15px;
+}
+
+.ofert-img img {
+    width: 250px;
+    }
+.ofert-txt{
+    flex-basis: 50%;
+    text-align: center;
+
+}
+.ofert-txt h3{
+    color:#111111;
+    font-family:&#x27;Oswald&#x27;,sans-serif;
+    font-size: 25px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.btn-2{
+
+    display: inline-block;
+    padding: 7px 10px;
+    background-color: #111111;
+    color:#ffffff ;
+    border-radius: 5px;
+    font-size: 15px;
+    transition: background-color 0.3s;
+}
+.btn-2:hover {
+    background-color: #bc2020;  /* Color de fondo al pasar el ratón */
+    color:#ffffff;   
+}
+.products{
+padding: 50px;
+text-align: center;
+}
+
+.products h2{
+    color: #111111;
+    font-family:&#x27;Oswald&#x27;,sans-serif; ;
+    font-size: 50px;
+    text-transform: uppercase;
+}
+
+
+.product-content{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 50px
+
+}
+.product{
+    width: 300px;
+    
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,.1);
+
+}
+
+
+
+.product img{
+    width: 250px;
+    height: 350px;
+    margin-bottom: 20px;
+
+}
+
+
+.product h3{
+font-size: 20px;
+color: #111111;
+font-family:&#x27;Oswald&#x27;,sans-serif; 
+text-transform: uppercase;
+margin-bottom: 15px;
+}
+
+.product p, .precio{
+    font-size: 16px ;
+    color: #111111;
+    margin-bottom: 15px;
+    
+}
+.precio {
+    font-weight: 800;
+}
+
+.icons{
+    padding: 50px 0 100px 0;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.icon-1{
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+    background-color: #f5f5f5;
+
+}
+
+.icon-txt h3{
+    font-size: 20px;
+    color: #111111;
+    font-family:&#x27;Oswald&#x27;,sans-serif;
+    text-transform: uppercase;
+
+}
+
+.icon-txt {
+    font-size: 16px;
+    color: #111111;    
+
+}
+.blog {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom:100px ;
+}
+
+.blog-1{
+
+    flex-basis: calc(33.3% - 30px);
+}
+
+.blog-2{
+
+    flex-basis: calc(33.3% - 30px);
+}
+
+.blog-1 img {
+    margin-bottom: 20px;
+}
+
+.blog-2 img {
+    margin-bottom: 20px;
+}
+
+.blog-1 h3{
+    font-size: 20px;
+    color: #111111;
+    font: &#x27;Oswald&#x27;,sans-serif; 
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    
+}
+
+.blog-2 h3{
+    font-size: 20px;
+    color: #111111;
+    font: &#x27;Oswald&#x27;,sans-serif; 
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    
+}
+
+.blog-1 p {
+    font-size: 16px;
+    color: #111111;
+}
+
+.blog-2 p {
+    font-size: 16px;
+    color: #111111;
+}
+
+.footer{
+    width: 100%;
+    padding: 20px;
+    background-color: #111111;
+    /* O &#x27;fixed&#x27; si quieres que siempre esté visible al final de la ventana */
+    bottom: 0;
+    left: 0;
+}
+
+.footer-content{
+    display: flex;
+    color: #dcdcdcdc;; /* Esto establece el color del texto a blanco */
+    justify-content: space-between;
+    
+}
+.nt .link {
+    
+    color: #dcdcdcdc; /* Color del texto oscuro para contrastar con el fondo claro */
+    padding: 15px; /* Añade un poco de espacio alrededor del contenido */
+    border-radius: 5px; /* Opcional: bordes redondeados para un aspecto más suave */
+}
+.link h3{
+    font-size: 18px;
+    color: #ffffff;
+    font-family: &#x27;Oswald&#x27;,sans-serif;;
+    text-transform: uppercase;
+    margin-bottom: px;
+}
+
+.link a{
+    font-size: 18px;
+    color: #dcdcdcdc;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 991px ){
+
+    .menu{
+
+        padding: 20px;
+    }
+
+    .menu label{
+
+        display: initial;
+    }
+    .menu .navbar{
+        position: absolute;
+        top: 100px;
+        left: 0;
+        right: 0;
+        background-color: #181818;
+        display: none;
+    }
+    .menu .navbar ul li {
+
+        width: 100%;
+    }
+    .menu ul li a{
+
+        color: #ffffff;
+    }
+
+    #menu:checked ~ .navbar{
+        display: initial;
+
+    }
+    .logo{
+        display: none;
+    }
+    .submenu:hover #carrito {
+        min-width: 100%;
+    }
+
+    .header{
+        min-height: 0vh;
+
+    }
+    .header-content{
+        padding: 50px 0 ;
+        flex-direction: column;
+    }
+    .header-img{
+        display: none;
+
+    }
+    .header-txt{
+        flex-basis: 100%;
+        text-align: center;
+
+    }
+
+    .header-txt-h1{
+        font-size: 70px;
+    }
+    .ofert{
+        padding: 30px 30px 0 30px;
+        flex-direction: column;
+    }
+    .ofert-1{
+    margin-bottom: 30px;
+    }
+    .products{
+        padding: 0 30px 30px 30px;
+    }
+    .products h2{
+
+        margin-bottom: 30px;
+    }
+    .product-content{
+        grid-template-columns: repeat(1,1fr);
+        gap: 30px;
+    }.product img{
+        width: 200px;
+        height: 280px;
+    }
+    .icons{
+        padding: 30px;
+        flex-direction: column;
+
+    }
+    .icon-1{
+        margin-bottom: 30px;
+    }
+
+    .blog{
+        padding: 0 30px 30px 30px;
+        flex-direction: column;
+    }
+    .blog-1{
+        margin-bottom: 30px;
+
+    }
+    .footer{
+        padding: 30px;
+
+    }
+    .footer-content{
+        flex-direction: column;
+        text-align: centers;
+    }
+} 
+
+
+/* Estilos base para contenedores de formularios */
+.form-container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+/* Estilos específicos para el formulario de login */
+.login-container input[type&#x3D;&quot;email&quot;],
+.login-container input[type&#x3D;&quot;password&quot;],
+.login-container input[type&#x3D;&quot;submit&quot;] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 24px);
+}
+
+.login-container input[type&#x3D;&quot;submit&quot;] {
+    background-color: #111111;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-container input[type&#x3D;&quot;submit&quot;]:hover {
+    background-color: #bc2020;
+}
+
+/* Estilos específicos para el formulario de registro */
+.register-container input[type&#x3D;&quot;text&quot;],
+.register-container input[type&#x3D;&quot;email&quot;],
+.register-container input[type&#x3D;&quot;password&quot;],
+.register-container input[type&#x3D;&quot;submit&quot;] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 24px);
+}
+
+.register-container input[type&#x3D;&quot;submit&quot;] {
+    background-color: #111111;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.register-container input[type&#x3D;&quot;submit&quot;]:hover {
+    background-color: #bc2020;
+}
+
+
+.form-container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px; /* Adecuado para formularios */
+    box-sizing: border-box; /* Asegura que padding no afecte el ancho total */
+    margin: 20px; /* Espacio alrededor para evitar tocar los bordes */
+}
+
+/* Estilos para formularios específicos no necesitan cambiar, se mantienen como están */
+
+/* Responsivo para dispositivos más pequeños */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 20px;
+        max-width: 90%; /* Más pequeño en dispositivos móviles */
+    }
+}
+
+
+
+/* Estilos específicos para la página de recuperación de contraseña */
+.password-recovery-container {
+    max-width: 400px; /* Mantiene el formulario estrecho y manejable */
+    margin: auto; /* Centra el formulario en la página */
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center; /* Centra el texto y los elementos del formulario */
+}
+
+.password-recovery-container input[type&#x3D;&quot;email&quot;],
+.password-recovery-container input[type&#x3D;&quot;submit&quot;] {
+    width: calc(100% - 20px); /* Ajusta el ancho tomando en cuenta el padding */
+    padding: 10px;
+    margin-top: 10px; /* Espacio entre los elementos del formulario */
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+.password-recovery-container input[type&#x3D;&quot;submit&quot;] {
+    background-color: #111111;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.password-recovery-container input[type&#x3D;&quot;submit&quot;]:hover {
+    background-color: #333333; /* Efecto al pasar el mouse */
+}
+
+.password-recovery-container a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.password-recovery-container a:hover {
+    text-decoration: underline;
+}
+
+.password-recovery-container p {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+
+/* Aplicar flexbox solo en los contenedores de formularios específicos */
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Altura mínima del viewport para asegurar el centrado vertical */
+    width: 100%; /* Ocupa todo el ancho disponible */
+}
+
+.form-container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px; /* Adecuado para formularios */
+    text-align: center;
+    position: relative; /* Posicionamiento relativo dentro del flex container */
+}
+
+/* Manten los estilos específicos de tus formularios sin cambios */
+.login-container input[type&#x3D;&quot;email&quot;],
+.login-container input[type&#x3D;&quot;password&quot;],
+.login-container input[type&#x3D;&quot;submit&quot;],
+.register-container input[type&#x3D;&quot;text&quot;],
+.register-container input[type&#x3D;&quot;email&quot;],
+.register-container input[type&#x3D;&quot;password&quot;],
+.register-container input[type&#x3D;&quot;submit&quot;],
+.password-recovery-container input[type&#x3D;&quot;email&quot;],
+.password-recovery-container input[type&#x3D;&quot;submit&quot;] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 20px); /* Ajusta el ancho tomando en cuenta el padding */
+}
+
+.login-container input[type&#x3D;&quot;submit&quot;],
+.register-container input[type&#x3D;&quot;submit&quot;],
+.password-recovery-container input[type&#x3D;&quot;submit&quot;] {
+    background-color: #111111;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-container input[type&#x3D;&quot;submit&quot;]:hover,
+.register-container input[type&#x3D;&quot;submit&quot;]:hover,
+.password-recovery-container input[type&#x3D;&quot;submit&quot;]:hover {
+    background-color: #333333; /* Cambio de color al pasar el mouse */
+}
+.form-wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.password-recovery-container {
+    width: 100%;
+    max-width: 400px;
+}
+
+
+
+.form-wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5; /* Fondo opcional para la página */
+}
+
+.password-recovery-container {
+    width: 100%;
+    max-width: 400px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.custom-alert {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: none; /* Oculto por defecto */
+}
+
+.custom-alert .close {
+    cursor: pointer;
+    padding-left: 10px;
+    font-size: 1.2rem;
+}
+
+.blog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.blog-entry {
+    display: flex; /* Establece el contenedor como flexible */
+    align-items: flex-start; /* Alinea los ítems al inicio verticalmente */
+    background-color: #fff; /* Fondo blanco */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+    margin-bottom: 20px; /* Espacio entre entradas */
+    border-radius: 8px; /* Bordes redondeados */
+    overflow: hidden; /* Evita que los contenidos desborden */
+}
+
+.blog-entry img {
+    width: 40%; /* Ancho de la imagen dentro del contenedor */
+    height: auto; /* Altura automática para mantener la proporción */
+    display: block; /* Elimina espacio debajo de la imagen */
+}
+
+.entry-content {
+    padding: 15px; /* Espacio interior alrededor del texto */
+    flex-grow: 1; /* Permite que el contenido de texto ocupe el espacio restante */
+    display: flex; /* Dispone el contenido en columna */
+    flex-direction: column; /* Organiza el título y el párrafo verticalmente */
+    justify-content: center; /* Centra el contenido verticalmente */
+}
+
+.entry-content h3 {
+    margin-top: 0;
+    margin-bottom: 10px; /* Espacio entre el título y el párrafo */
+    font-size: 20px; /* Tamaño del título */
+    color: #333; /* Color del texto */
+    text-transform: uppercase;
+    
+}
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 400px; /* Ancho máximo para el formulario */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.password-recovery-container {
+    width: 100%;
+}
+
+@media (min-width: 576px) {
+    .password-recovery-container {
+        padding: 2rem; /* Ajuste de padding para pantallas más grandes */
+    }
+}
+
+.btn-custom {
+    background-color: #111111; /* Color personalizado */
+    border-color: #111111; /* Color personalizado */
+    color: #f5f5f5;
+    width: 100px; /* Ancho personalizado */
+    margin: 0 auto;
+    display: block;
+}
+
+.btn-custom:hover {
+    background-color: #bc2020;   /* Color al pasar el mouse */
+    border-color: #f5f5f5;  
+    color: #f5f5f5;
+}
+
+/* Estilo para los enlaces */
+.login-link, .password-recovery a {
+    color: #007bff; /* Color del enlace */
+    text-decoration: none; /* Sin subrayado */
+}
+
+/* Personalización del fondo de la alerta */
+.swal2-popup {
+    background-color: #f0f0f0 !important; /* Cambia el color de fondo */
+    color: #333 !important; /* Cambia el color del texto */
+}
+
+/* Personalización del título */
+.swal2-title {
+    color: #ff6347 !important; /* Cambia el color del título */
+}
+
+/* Personalización del texto del contenido */
+.swal2-content {
+    color: #555 !important; /* Cambia el color del texto del contenido */
+}
+
+/* Personalización del botón de confirmación */
+.swal2-confirm {
+    background-color: #4CAF50 !important; /* Cambia el color de fondo del botón */
+    color: #fff !important; /* Cambia el color del texto del botón */
+}
+
+/* Personalización del botón de cancelación */
+.swal2-cancel {
+    background-color: #f44336 !important; /* Cambia el color de fondo del botón */
+    color: #fff !important; /* Cambia el color del texto del botón */
+}
+/* Estilos para la tabla */
+.table thead th {
+    background-color: #343a40; /* Fondo de los encabezados */
+    color: #ffffff; /* Color del texto de los encabezados */
+}
+
+.table tbody tr {
+    background-color: #f8f9fa; /* Fondo de las filas */
+}
+
+.table tbody tr:nth-of-type(odd) {
+    background-color: #e9ecef; /* Fondo de las filas impares */
+}
+
+.table tbody td {
+    color: #343a40; /* Color del texto de las celdas del cuerpo de la tabla */
+}
+
+.table tbody tr:hover {
+    background-color: #d6d8db; /* Fondo al pasar el ratón */
+}
+
+/* Estilos para los botones */
+.btn-warning {
+    background-color: #ffcc00;
+    border-color: #ffcc00;
+    color: #ffffff;
+}
+
+.btn-warning:hover {
+    background-color: #e6b800;
+    border-color: #e6b800;
+}
+
+.btn-danger {
+    background-color: #ff4444;
+    border-color: #ff4444;
+    color: #ffffff;
+}
+
+.btn-danger:hover {
+    background-color: #cc0000;
+    border-color: #cc0000;
+}
+
+/* Estilos para los campos del modal de edición */
+.modal-body .form-label {
+    color: #343a40; /* Cambia este color según tu preferencia */
+}
+
+.modal-body .form-control {
+    color: #343a40; /* Cambia este color según tu preferencia */
+}
+#logout-button {
+    border: none;
+    background-color: transparent;
+    color: #111111; /* Color rojo para indicar acción de cierre */
+    font-size: 16px; /* Tamaño del texto */
+    padding: 0 10px; /* Espaciado para fácil clic */
+}
+
+#logout-button:hover {
+    border: none;
+    background-color: transparent;
+    color: #cc0000; /* Color rojo para indicar acción de cierre */
+    font-size: 16px; /* Tamaño del texto */
+    padding: 10px; /* Espaciado para fácil clic */
+}
+
+#user-info span {
+    margin-right: 10px; /* Espaciado entre el nombre del usuario y el botón */
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div>  <section class="blog container">    <div class="blog-entry">      <img src="assets/images/nosotros.jpg" alt="Blog 1">      <div class="entry-content">          <h3>Nosotros</h3>          <p>nos dedicamos a descubrir y seleccionar los mejores vinos, combinando tradición con una visión             moderna de la viticultura. Nuestra misión es llevar a tu mesa vinos de alta calidad que destacan por su autenticidad y carácter.            Cada botella de Vinacho es un homenaje a la rica herencia vitivinícola y a la innovación enológica, diseñada para complacer paladares            que buscan experiencias genuinas y memorables. Únete a la familia Vinacho y eleva tus momentos especiales con nuestros vinos selectos, perfectos para cada ocasión..</p>      </div>    </div>    <div class="blog-entry">      <img src="assets/images/mision.jpg" alt="Blog 1">      <div class="entry-content">          <h3>mision</h3>          <p>Nuestra misión en Vinacho es ofrecer vinos excepcionales que encanten los sentidos y celebren la riqueza del terroir. Nos comprometemos a seleccionar meticulosamente vinos que no solo respeten la tradición vitivinícola, sino que también promuevan prácticas sostenibles y responsables. Aspiramos a conectar a nuestros clientes con la cultura del vino a través de experiencias educativas y degustaciones que inspiren aprecio y pasión por el vino..</p>      </div>    </div>    <div class="blog-entry">      <img src="assets/images/vision.jpg" alt="Blog 1">      <div class="entry-content">          <h3>vision</h3>          <p>En Vinacho, nuestra visión es ser reconocidos como una referencia en la industria vitivinícola por nuestra integridad, innovación y compromiso con la calidad. Nos proponemos expandir nuestra presencia en el mercado global, introduciendo los paladares del mundo a la diversidad y riqueza de los vinos. Al mirar hacia el futuro, buscamos innovar continuamente y adaptarnos a las nuevas tendencias y demandas del mercado, manteniendo siempre el respeto por nuestro legado y el medio ambiente.            Espero que estos ejemplos te sean útiles y puedan ser el punto de partida para reflejar los verdaderos valores y aspiraciones de Vinacho. Si hay algún aspecto particular que te gustaría incluir o modificar, házmelo saber para personalizar aún más estas declaraciones.</p>      </div>    </div>  </section>  <footer class="footer">    <div class="footer-content container">      <div class="link">          <h3>Enlaces</h3>          <ul>              <li><a href="index.html">Inicio</a></li>              <li><a href="productos.html">Productos</a></li>              <li><a href="nosotros.html">Nosotros</a></li>              <li><a href="contacto.html">Contacto</a></li>          </ul>      </div>      <div class="link">          <h3>Redes Sociales</h3>          <ul>              <li><a href="#">Facebook</a></li>              <li><a href="#">Instagram</a></li>              <li><a href="#">LinkedIn</a></li>          </ul>      </div>      <div class="link">          <h3>Contacto</h3>          <ul>              <li>Amunategui 178, 5to piso, Santiago-Chile</li>              <li>Teléfono: +562 5406211</li>              <li>contacto&#64;vinachos.cl</li>          </ul>      </div>    </div></footer></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ContactoComponent', 'selector': 'app-contacto'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NosotrosComponent', 'selector': 'app-nosotros'},{'name': 'ProductsComponent', 'selector': 'app-products'},{'name': 'RegistroComponent', 'selector': 'app-registro'},{'name': 'UsuariosComponent', 'selector': 'app-usuarios'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'NosotrosComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'NosotrosComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

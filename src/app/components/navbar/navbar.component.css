@@ -1,0 +1,1364 @@
+/* @import Importa fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/**
+ * Estilos globales para todos los elementos
+ * 
+ * - Resetea márgenes y padding
+ * - Aplica box-sizing border-box
+ * - Elimina decoraciones de texto y listas
+ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+/**
+ * Estilo global para el cuerpo del documento
+ * 
+ * - Establece la fuente principal
+ * - Alinea elementos en el centro
+ * - Configura dirección de flex a columna
+ */
+body {
+    font-family: 'Poppins', sans-serif;
+    max-width: 100%;
+    align-items: center;
+    flex-direction: column;
+}
+
+/**
+ * Estilo para el contenedor principal
+ * 
+ * - Flex 1 para expandir el contenido
+ */
+.wrapper {
+    flex: 1;
+}
+
+/**
+ * Estilo para las imágenes
+ * 
+ * - Ancho máximo del 100%
+ */
+img {
+    max-width: 100%;
+}
+
+/**
+ * Estilo para el contenedor principal
+ * 
+ * - Ancho máximo de 1200px y centrado
+ */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/**
+ * Estilo para el encabezado
+ * 
+ * - Ancho máximo del 100%
+ * - Alinea elementos en el centro
+ * - Altura mínima del 88vh
+ * - Fondo gris claro
+ * - Padding de 70px
+ */
+.header {
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    min-height: 88vh;
+    background-color: #f5f5f5;
+    padding: 70px;
+}
+
+/**
+ * Estilo para el menú
+ * 
+ * - Posición absoluta en la parte superior
+ * - Alineación y justificación de elementos
+ */
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/**
+ * Estilo para el logo
+ * 
+ * - Tamaño de fuente de 25px
+ * - Color y estilo de texto
+ * - Transformación a mayúsculas y negrita
+ */
+.logo {
+    font-size: 25px;
+    color: #111111;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+/**
+ * Estilo para el hover del logo
+ * 
+ * - Sin subrayado al pasar el ratón
+ */
+.logo:hover {
+    text-decoration: none;
+    color: #111111;
+}
+
+/**
+ * Estilo para los elementos de la lista del menú
+ * 
+ * - Posición relativa y flotante a la izquierda
+ */
+.menu .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+/**
+ * Estilo para la sección de nosotros y contacto
+ * 
+ * - Alineación central y padding ajustable
+ * - Fondo gris claro
+ */
+#nosotros-header, #contacto-header {
+    display: flex;
+    align-items: center;
+    min-height: auto;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+/**
+ * Estilo para los enlaces del menú
+ * 
+ * - Tamaño de fuente de 18px
+ * - Padding y color
+ */
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 20px;
+    color: #111111;
+}
+
+/**
+ * Estilo para el menú en móviles
+ * 
+ * - Display none por defecto
+ */
+#menu {
+    display: none;
+}
+
+/**
+ * Estilo para el ícono del menú
+ * 
+ * - Ancho de 25px
+ */
+.menu-icono {
+    width: 25px;
+}
+
+/**
+ * Estilo para la etiqueta del menú
+ * 
+ * - Cursor pointer y display none por defecto
+ */
+.menu label {
+    cursor: pointer;
+    display: none;
+}
+
+/**
+ * Estilo para el submenú
+ * 
+ * - Posición relativa
+ */
+.submenu {
+    position: relative;
+}
+
+/**
+ * Estilo para el carrito del submenú
+ * 
+ * - Display none por defecto
+ */
+.submenu #carrito {
+    display: none;
+}
+
+/**
+ * Estilo para mostrar el carrito al pasar el ratón
+ * 
+ * - Posición absoluta, fondo difuminado y padding
+ */
+.submenu:hover #carrito {
+    display: block;
+    position: absolute;
+    right: 0;
+    backdrop-filter: blur(10px);
+    top: 100%;
+    z-index: 1;
+    background-color: #4E4b5076;
+    padding: 20px;
+    min-width: 400px;
+}
+
+/**
+ * Estilo para las tablas
+ * 
+ * - Ancho del 100%
+ */
+table {
+    width: 100%;
+}
+
+/**
+ * Estilo para las celdas de la tabla
+ * 
+ * - Color blanco
+ */
+th, td {
+    color: #ffffff;
+}
+
+/**
+ * Estilo para el botón de borrar
+ * 
+ * - Fondo negro, bordes redondeados y padding
+ * - Color blanco y negrita
+ * - Cursor pointer
+ */
+.borrar {
+    background-color: #111111;
+    border-radius: 50%;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+/**
+ * Estilo para el contenido del encabezado
+ * 
+ * - Alineación y justificación
+ * - Flex 1 y padding
+ */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    padding: 0 200px;
+}
+
+/**
+ * Estilo para la imagen del encabezado
+ * 
+ * - Flex-basis del 50% y texto centrado
+ */
+.header-img {
+    flex-basis: 50%;
+    text-align: center;
+}
+
+/**
+ * Estilo para el texto del encabezado
+ * 
+ * - Tamaño de fuente de 90px
+ * - Transformación a mayúsculas
+ * - Color negro y familia de fuente Oswald
+ * - Margen inferior de 15px
+ */
+.header-txt h1 {
+    font-size: 90px;
+    text-transform: uppercase;
+    line-height: 1;
+    color: #111111;
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 15px;
+}
+
+/**
+ * Estilo para el párrafo del encabezado
+ * 
+ * - Tamaño de fuente de 20px
+ * - Transformación a mayúsculas
+ * - Margen inferior de 20px
+ */
+.header-txt p {
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/**
+ * Estilo para el botón principal
+ * 
+ * - Display inline-block
+ * - Padding, fondo negro y color blanco
+ * - Bordes redondeados y transición suave
+ */
+.btn-1 {
+    display: inline-block;
+    padding: 11px 25px;
+    background-color: #111111;
+    color: #ffffff;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+/**
+ * Estilo para el hover del botón principal
+ * 
+ * - Cambio de fondo a rojo y color blanco
+ */
+.btn-1:hover {
+    background-color: #bc2020;
+    color: #ffffff;
+}
+
+/**
+ * Estilo para la sección de ofertas
+ * 
+ * - Padding y display flex
+ * - Justificación del espacio
+ */
+.ofert {
+    padding: 20px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+/**
+ * Estilo para cada oferta individual
+ * 
+ * - Display flex y alineación central
+ * - Flex-basis del 33.3% menos 15px
+ * - Padding de 35px
+ */
+.ofert-1 {
+    display: flex;
+    align-items: center;
+    flex-basis: calc(33.3% - 15px);
+    padding: 35px;
+}
+
+/**
+ * Estilo para la imagen de la oferta
+ * 
+ * - Flex-basis del 50% y margen derecho de 15px
+ */
+.ofert-img {
+    flex-basis: 50%;
+    margin-right: 15px;
+}
+
+/**
+ * Estilo para la imagen dentro de la oferta
+ * 
+ * - Ancho de 250px
+ */
+.ofert-img img {
+    width: 250px;
+}
+
+/**
+ * Estilo para el texto de la oferta
+ * 
+ * - Flex-basis del 50% y texto centrado
+ */
+.ofert-txt {
+    flex-basis: 50%;
+    text-align: center;
+}
+
+/**
+ * Estilo para el título de la oferta
+ * 
+ * - Color negro y familia de fuente Oswald
+ * - Tamaño de fuente de 25px
+ * - Transformación a mayúsculas y margen inferior
+ */
+.ofert-txt h3 {
+    color: #111111;
+    font-family: 'Oswald', sans-serif;
+    font-size: 25px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+/**
+ * Estilo para el segundo botón
+ * 
+ * - Display inline-block
+ * - Padding, fondo negro y color blanco
+ * - Bordes redondeados y transición suave
+ */
+.btn-2 {
+    display: inline-block;
+    padding: 7px 10px;
+    background-color: #111111;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 15px;
+    transition: background-color 0.3s;
+}
+
+/**
+ * Estilo para el hover del segundo botón
+ * 
+ * - Cambio de fondo a rojo y color blanco
+ */
+.btn-2:hover {
+    background-color: #bc2020;
+    color: #ffffff;
+}
+
+/**
+ * Estilo para la sección de productos
+ * 
+ * - Padding y texto centrado
+ */
+.products {
+    padding: 50px;
+    text-align: center;
+}
+
+/**
+ * Estilo para el título de los productos
+ * 
+ * - Color negro y familia de fuente Oswald
+ * - Tamaño de fuente de 50px
+ * - Transformación a mayúsculas
+ */
+.products h2 {
+    color: #111111;
+    font-family: 'Oswald', sans-serif;
+    font-size: 50px;
+    text-transform: uppercase;
+}
+
+/**
+ * Estilo para el contenedor de contenido de productos
+ * 
+ * - Display grid y columnas repetidas
+ * - Espacio entre elementos de 50px
+ */
+.product-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+
+/**
+ * Estilo para cada producto
+ * 
+ * - Ancho de 300px y texto centrado
+ * - Padding y sombra
+ */
+.product {
+    width: 300px;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+}
+
+/**
+ * Estilo para la imagen del producto
+ * 
+ * - Ancho de 250px y altura de 350px
+ * - Margen inferior
+ */
+.product img {
+    width: 250px;
+    height: 350px;
+    margin-bottom: 20px;
+}
+
+/**
+ * Estilo para el título del producto
+ * 
+ * - Tamaño de fuente de 20px
+ * - Color negro y familia de fuente Oswald
+ * - Transformación a mayúsculas y margen inferior
+ */
+.product h3 {
+    font-size: 20px;
+    color: #111111;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+/**
+ * Estilo para el párrafo y precio del producto
+ * 
+ * - Tamaño de fuente de 16px
+ * - Color negro y margen inferior
+ */
+.product p, .precio {
+    font-size: 16px;
+    color: #111111;
+    margin-bottom: 15px;
+}
+
+/**
+ * Estilo para el precio del producto
+ * 
+ * - Negrita
+ */
+.precio {
+    font-weight: 800;
+}
+
+/**
+ * Estilo para la sección de íconos
+ * 
+ * - Padding y display flex
+ * - Justificación del espacio
+ */
+.icons {
+    padding: 50px 0 100px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+/**
+ * Estilo para cada ícono individual
+ * 
+ * - Flex-basis del 100% y display flex
+ * - Alineación central y justificación del espacio
+ * - Padding y fondo gris claro
+ */
+.icon-1 {
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+    background-color: #f5f5f5;
+}
+
+/**
+ * Estilo para el texto del ícono
+ * 
+ * - Tamaño de fuente de 20px
+ * - Color negro y familia de fuente Oswald
+ * - Transformación a mayúsculas
+ */
+.icon-txt h3 {
+    font-size: 20px;
+    color: #111111;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+
+/**
+ * Estilo para el contenedor de texto del ícono
+ * 
+ * - Tamaño de fuente de 16px
+ * - Color negro
+ */
+.icon-txt {
+    font-size: 16px;
+    color: #111111;
+}
+
+/**
+ * Estilo para la sección del blog
+ * 
+ * - Display flex y justificación del espacio
+ * - Padding inferior
+ */
+.blog {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 100px;
+}
+
+/**
+ * Estilo para cada entrada del blog
+ * 
+ * - Flex-basis del 33.3% menos 30px
+ */
+.blog-1, .blog-2 {
+    flex-basis: calc(33.3% - 30px);
+}
+
+/**
+ * Estilo para la imagen de la entrada del blog
+ * 
+ * - Margen inferior
+ */
+.blog-1 img, .blog-2 img {
+    margin-bottom: 20px;
+}
+
+/**
+ * Estilo para el título de la entrada del blog
+ * 
+ * - Tamaño de fuente de 20px
+ * - Color negro y familia de fuente Oswald
+ * - Transformación a mayúsculas y margen inferior
+ */
+.blog-1 h3, .blog-2 h3 {
+    font-size: 20px;
+    color: #111111;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+/**
+ * Estilo para el párrafo de la entrada del blog
+ * 
+ * - Tamaño de fuente de 16px
+ * - Color negro
+ */
+.blog-1 p, .blog-2 p {
+    font-size: 16px;
+    color: #111111;
+}
+
+/**
+ * Estilo para el pie de página
+ * 
+ * - Ancho del 100% y padding
+ * - Fondo negro y color blanco
+ * - Posición en la parte inferior
+ */
+.footer {
+    width: 100%;
+    padding: 20px;
+    background-color: #111111;
+    bottom: 0;
+    left: 0;
+}
+
+/**
+ * Estilo para el contenido del pie de página
+ * 
+ * - Display flex y justificación del espacio
+ * - Color gris claro
+ */
+.footer-content {
+    display: flex;
+    color: #dcdcdc;
+    justify-content: space-between;
+}
+
+/**
+ * Estilo para los enlaces del pie de página
+ * 
+ * - Color gris claro y padding
+ * - Bordes redondeados
+ */
+.nt .link {
+    color: #dcdcdc;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/**
+ * Estilo para el título de los enlaces del pie de página
+ * 
+ * - Tamaño de fuente de 18px
+ * - Color blanco y familia de fuente Oswald
+ * - Transformación a mayúsculas
+ */
+.link h3 {
+    font-size: 18px;
+    color: #ffffff;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+
+/**
+ * Estilo para los enlaces del pie de página
+ * 
+ * - Tamaño de fuente de 18px
+ * - Color gris claro y margen inferior
+ */
+.link a {
+    font-size: 18px;
+    color: #dcdcdc;
+    margin-bottom: 10px;
+}
+
+/**
+ * Media query para dispositivos con ancho máximo de 991px
+ * 
+ * - Ajustes específicos para la navegación, encabezado, productos, íconos, blog y pie de página
+ */
+@media (max-width: 991px) {
+    .menu {
+        padding: 20px;
+    }
+
+    .menu label {
+        display: initial;
+    }
+
+    .menu .navbar {
+        position: absolute;
+        top: 100px;
+        left: 0;
+        right: 0;
+        background-color: #181818;
+        display: none;
+    }
+
+    .menu .navbar ul li {
+        width: 100%;
+    }
+
+    .menu ul li a {
+        color: #ffffff;
+    }
+
+    #menu:checked ~ .navbar {
+        display: initial;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .submenu:hover #carrito {
+        min-width: 100%;
+    }
+
+    .header {
+        min-height: 0vh;
+    }
+
+    .header-content {
+        padding: 50px 0;
+        flex-direction: column;
+    }
+
+    .header-img {
+        display: none;
+    }
+
+    .header-txt {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .header-txt-h1 {
+        font-size: 70px;
+    }
+
+    .ofert {
+        padding: 30px 30px 0 30px;
+        flex-direction: column;
+    }
+
+    .ofert-1 {
+        margin-bottom: 30px;
+    }
+
+    .products {
+        padding: 0 30px 30px 30px;
+    }
+
+    .products h2 {
+        margin-bottom: 30px;
+    }
+
+    .product-content {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
+    }
+
+    .product img {
+        width: 200px;
+        height: 280px;
+    }
+
+    .icons {
+        padding: 30px;
+        flex-direction: column;
+    }
+
+    .icon-1 {
+        margin-bottom: 30px;
+    }
+
+    .blog {
+        padding: 0 30px 30px 30px;
+        flex-direction: column;
+    }
+
+    .blog-1 {
+        margin-bottom: 30px;
+    }
+
+    .footer {
+        padding: 30px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Estilos base para contenedores de formularios */
+.form-container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+/* Estilos específicos para el formulario de login */
+.login-container input[type="email"],
+.login-container input[type="password"],
+.login-container input[type="submit"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 24px);
+}
+
+.login-container input[type="submit"] {
+    background-color: #111111;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-container input[type="submit"]:hover {
+    background-color: #bc2020;
+}
+
+/* Estilos específicos para el formulario de registro */
+.register-container input[type="text"],
+.register-container input[type="email"],
+.register-container input[type="password"],
+.register-container input[type="submit"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 24px);
+}
+
+.register-container input[type="submit"] {
+    background-color: #111111;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.register-container input[type="submit"]:hover {
+    background-color: #bc2020;
+}
+
+/* Estilos responsivos para contenedores de formularios */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 20px;
+        max-width: 90%;
+    }
+}
+
+/* Estilos específicos para la página de recuperación de contraseña */
+.password-recovery-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.password-recovery-container input[type="email"],
+.password-recovery-container input[type="submit"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+.password-recovery-container input[type="submit"] {
+    background-color: #111111;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.password-recovery-container input[type="submit"]:hover {
+    background-color: #333333;
+}
+
+.password-recovery-container a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.password-recovery-container a:hover {
+    text-decoration: underline;
+}
+
+.password-recovery-container p {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+/* Estilos para formularios específicos */
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.form-container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Estilos para los campos de formularios específicos */
+.login-container input[type="email"],
+.login-container input[type="password"],
+.login-container input[type="submit"],
+.register-container input[type="text"],
+.register-container input[type="email"],
+.register-container input[type="password"],
+.register-container input[type="submit"],
+.password-recovery-container input[type="email"],
+.password-recovery-container input[type="submit"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 20px);
+}
+
+/* Estilos para los botones de envío */
+.login-container input[type="submit"],
+.register-container input[type="submit"],
+.password-recovery-container input[type="submit"] {
+    background-color: #111111;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-container input[type="submit"]:hover,
+.register-container input[type="submit"]:hover,
+.password-recovery-container input[type="submit"]:hover {
+    background-color: #333333;
+}
+
+/* Estilos para la alerta personalizada */
+.custom-alert {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: none;
+}
+
+.custom-alert .close {
+    cursor: pointer;
+    padding-left: 10px;
+    font-size: 1.2rem;
+}
+
+/* Estilos específicos para la entrada del blog */
+.blog-entry {
+    display: flex;
+    align-items: flex-start;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.blog-entry img {
+    width: 40%;
+    height: auto;
+    display: block;
+}
+
+.entry-content {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.entry-content h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #333;
+    text-transform: uppercase;
+}
+
+/* Estilos para contenedores de formularios */
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.password-recovery-container {
+    width: 100%;
+}
+
+@media (min-width: 576px) {
+    .password-recovery-container {
+        padding: 2rem;
+    }
+}
+
+/* Estilos para botones personalizados */
+.btn-custom {
+    background-color: #111111;
+    border-color: #111111;
+    color: #f5f5f5;
+    width: 100px;
+    margin: 0 auto;
+    display: block;
+}
+
+.btn-custom:hover {
+    background-color: #bc2020;
+    border-color: #f5f5f5;
+    color: #f5f5f5;
+}
+
+/* Estilos para enlaces */
+.login-link, .password-recovery a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Estilos personalizados para SweetAlert */
+.swal2-popup {
+    background-color: #f0f0f0 !important;
+    color: #333 !important;
+}
+
+.swal2-title {
+    color: #ff6347 !important;
+}
+
+.swal2-content {
+    color: #555 !important;
+}
+
+.swal2-confirm {
+    background-color: #4CAF50 !important;
+    color: #fff !important;
+}
+
+.swal2-cancel {
+    background-color: #f44336 !important;
+    color: #fff !important;
+}
+
+/* Estilos para la tabla */
+.table thead th {
+    background-color: #343a40;
+    color: #ffffff;
+}
+
+.table tbody tr {
+    background-color: #f8f9fa;
+}
+
+.table tbody tr:nth-of-type(odd) {
+    background-color: #e9ecef;
+}
+
+.table tbody td {
+    color: #343a40;
+}
+
+.table tbody tr:hover {
+    background-color: #d6d8db;
+}
+
+/* Estilos para botones */
+.btn-warning {
+    background-color: #ffcc00;
+    border-color: #ffcc00;
+    color: #ffffff;
+}
+
+.btn-warning:hover {
+    background-color: #e6b800;
+    border-color: #e6b800;
+}
+
+.btn-danger {
+    background-color: #ff4444;
+    border-color: #ff4444;
+    color: #ffffff;
+}
+
+.btn-danger:hover {
+    background-color: #cc0000;
+    border-color: #cc0000;
+}
+
+/* Estilos para campos del modal de edición */
+.modal-body .form-label {
+    color: #343a40;
+}
+
+.modal-body .form-control {
+    color: #343a40;
+}
+
+/* Estilos para el botón de logout */
+#logout-button {
+    border: none;
+    background-color: transparent;
+    color: #111111;
+    font-size: 16px;
+    padding: 0 10px;
+}
+
+#logout-button:hover {
+    color: #cc0000;
+    padding: 10px;
+}
+
+/* Estilo para el contenedor de información del usuario */
+#user-info span {
+    margin-right: 10px;
+}
+
+/* Estilos para el menú */
+.menu {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu .navbar ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu .navbar ul li {
+    position: relative;
+    margin: 0 15px;
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 20px;
+    color: #111111;
+}
+
+.menu .navbar ul li .submenu-items {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu .navbar ul li:hover .submenu-items {
+    display: block;
+}
+
+.menu .navbar ul li .submenu-items li {
+    margin: 0;
+}
+
+.menu .navbar ul li .submenu-items li a {
+    padding: 10px 20px;
+    color: #111111;
+    white-space: nowrap;
+    display: block;
+}
+
+.menu .navbar ul li .submenu-items li a:hover {
+    background-color: #f5f5f5;
+}
+
+@media (max-width: 991px) {
+    .menu {
+        padding: 20px;
+    }
+
+    .menu label {
+        display: initial;
+    }
+
+    .menu .navbar {
+        position: absolute;
+        top: 100px;
+        left: 0;
+        right: 0;
+        background-color: #181818;
+        display: none;
+    }
+
+    .menu .navbar ul li {
+        width: 100%;
+    }
+
+    .menu ul li a {
+        color: #ffffff;
+    }
+
+    #menu:checked ~ .navbar {
+        display: initial;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .submenu:hover #carrito {
+        min-width: 100%;
+    }
+
+    .header {
+        min-height: 0vh;
+    }
+
+    .header-content {
+        padding: 50px 0;
+        flex-direction: column;
+    }
+
+    .header-img {
+        display: none;
+    }
+
+    .header-txt {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .header-txt-h1 {
+        font-size: 70px;
+    }
+
+    .ofert {
+        padding: 30px 30px 0 30px;
+        flex-direction: column;
+    }
+
+    .ofert-1 {
+        margin-bottom: 30px;
+    }
+
+    .products {
+        padding: 0 30px 30px 30px;
+    }
+
+    .products h2 {
+        margin-bottom: 30px;
+    }
+
+    .product-content {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
+    }
+
+    .product img {
+        width: 200px;
+        height: 280px;
+    }
+
+    .icons {
+        padding: 30px;
+        flex-direction: column;
+    }
+
+    .icon-1 {
+        margin-bottom: 30px;
+    }
+
+    .blog {
+        padding: 0 30px 30px 30px;
+        flex-direction: column;
+    }
+
+    .blog-1 {
+        margin-bottom: 30px;
+    }
+
+    .footer {
+        padding: 30px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
