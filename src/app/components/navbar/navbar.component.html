@@ -45,7 +45,7 @@
           @description Mostrar opciones adicionales si el usuario tiene permisos de administrador 
           @ngIf Directiva para verificar permisos del usuario 
         -->
-        <ng-container *ngIf="userInfo && userInfo.permisos === 'admin'">
+      <!-- <ng-container *ngIf="userInfo && userInfo.permisos === 'admin'">-->
           <li class="submenu">
             <a href="#">Mantenedores</a>
             <ul class="submenu-items">
@@ -53,7 +53,7 @@
               <li><a routerLink="/mntproductos">Productos</a></li>
             </ul>
           </li>
-        </ng-container>
+        <!--</ng-container>-->
       </ul>
     </nav>
     

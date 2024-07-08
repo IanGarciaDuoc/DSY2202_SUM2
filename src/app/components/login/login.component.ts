@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UsuariosService } from '../../service/usuarios.service';
 
 /**
  * @description Componente de inicio de sesión que maneja la lógica de autenticación del usuario.
@@ -23,7 +24,11 @@ export class LoginComponent implements OnInit {
    * @param {FormBuilder} fb - Servicio para construir formularios reactivos.
    * @param {Router} router - Servicio de enrutamiento para la navegación.
    */
-  constructor(private fb: FormBuilder, private router: Router) {}
+  constructor(
+    private fb: FormBuilder, 
+    private router: Router, 
+    private usuariosservice: UsuariosService
+  ) {}
 
   /**
    * @description Inicializa el componente y configura el formulario reactivo.
@@ -44,35 +49,36 @@ export class LoginComponent implements OnInit {
       const email = this.formLogin.get('email')?.value; // @description Obtiene el valor del campo email.
       const password = this.formLogin.get('password')?.value; // @description Obtiene el valor del campo password.
 
-      // @description Obtener usuarios del localStorage
-      const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
+      this.usuariosservice.Login(email, password).subscribe({
+        next: (usuarioRegistrado) => {
+          if (usuarioRegistrado) {
+            if (usuarioRegistrado.password === password) {
+              // @description Guardar la sesión del usuario en localStorage
+              localStorage.setItem('sesionUsuario', JSON.stringify(usuarioRegistrado));
+              localStorage.setItem('loggedIn', 'true');
+              localStorage.setItem('nombre', usuarioRegistrado.nombre);
 
-      // @description Verificar si el correo electrónico está registrado
-      const usuarioRegistrado = usuarios.find((usuario: any) => usuario.email === email);
+              console.log('Inicio de sesión correcto. Nombre del usuario almacenado:', usuarioRegistrado.nombre);
 
-      if (usuarioRegistrado) {
-        if (usuarioRegistrado.password === password) {
-          // @description Guardar la sesión del usuario en localStorage
-          localStorage.setItem('sesionUsuario', JSON.stringify(usuarioRegistrado));
-          localStorage.setItem('loggedIn', 'true');
-          localStorage.setItem('nombre', usuarioRegistrado.nombre);
-
-          console.log('Inicio de sesión correcto. Nombre del usuario almacenado:', usuarioRegistrado.nombre);
-
-          this.mensajeError = 'Inicio de sesión correcto';
-          setTimeout(() => {
-            this.mensajeError = null;
-            // @description Navegar a la página principal
-            this.router.navigate(['/']);
-          }, 2000);
-          this.correoNoRegistrado = false;
-        } else {
-          this.mensajeError = 'La contraseña ingresada es incorrecta';
+              this.mensajeError = 'Inicio de sesión correcto';
+              setTimeout(() => {
+                this.mensajeError = null;
+                // @description Navegar a la página principal
+                this.router.navigate(['/']);
+              }, 2000);
+              this.correoNoRegistrado = false;
+            } else {
+              this.mensajeError = 'La contraseña ingresada es incorrecta';
+            }
+          } else {
+            this.mensajeError = 'El correo electrónico no está registrado';
+            this.correoNoRegistrado = true;
+          }
+        },
+        error: (err) => {
+          this.mensajeError = 'Error de autenticación: ' + err.message;
         }
-      } else {
-        this.mensajeError = 'El correo electrónico no está registrado';
-        this.correoNoRegistrado = true;
-      }
+      });
     } else {
       this.mensajeError = 'Por favor, complete todos los campos correctamente';
     }
