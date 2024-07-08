@@ -9,7 +9,9 @@
     "test": "ng test",
     "serve:ssr:DSY2202_SUM2": "node dist/dsy2202-sum2/server/server.mjs",
     "compodoc": "compodoc -p tsconfig.json",
-    "compodoc:serve": "compodoc -s"
+    "compodoc:serve": "compodoc -s",
+    "build:universal": "ng run universal-demo:build:production && ng run universal-demo:server:production"
+
   },
   "private": true,
   "dependencies": {
@@ -17,6 +19,7 @@
     "@angular/common": "^18.0.0",
     "@angular/compiler": "^18.0.0",
     "@angular/core": "^18.0.0",
+    "@angular/fire": "^18.0.1",
     "@angular/forms": "^18.0.0",
     "@angular/platform-browser": "^18.0.0",
     "@angular/platform-browser-dynamic": "^18.0.0",

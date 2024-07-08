@@ -3,7 +3,8 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
-
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 /**
  * Configuración de la aplicación Angular.
  * 
@@ -14,11 +15,18 @@ import { provideClientHydration } from '@angular/platform-browser';
  */
 export const appConfig: ApplicationConfig = {
   providers: [
-    // Proveedor para la detección de cambios en la zona de Angular con coalescencia de eventos
-    provideZoneChangeDetection({ eventCoalescing: true }),
-    // Proveedor para configurar el enrutador con las rutas de la aplicación
-    provideRouter(routes),
-    // Proveedor para la hidratación del cliente, optimizando la carga de la aplicación
-    provideClientHydration()
+    provideRouter(routes), 
+    provideFirebaseApp(() => 
+      initializeApp({
+        apiKey: "AIzaSyCiDsBsFNQ-KE31iHY4ADCLD2xztxRruAw",
+        authDomain: "vinachos-fd78e.firebaseapp.com",
+        projectId: "vinachos-fd78e",
+        storageBucket: "vinachos-fd78e.appspot.com",
+        messagingSenderId: "153508477926",
+        appId: "1:153508477926:web:74723125c21f200eb67427",
+        measurementId: "G-3DP6PZ5134"
+            })
+    ), 
+    provideFirestore(() => getFirestore())
   ]
 };
